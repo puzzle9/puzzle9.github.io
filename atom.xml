@@ -6,7 +6,7 @@
   <link href="https://puzzle9.github.io/atom.xml" rel="self"/>
   
   <link href="https://puzzle9.github.io/"/>
-  <updated>2022-07-30T13:32:43.074Z</updated>
+  <updated>2022-09-01T19:35:06.325Z</updated>
   <id>https://puzzle9.github.io/</id>
   
   <author>
@@ -15,6 +15,44 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>adb</title>
+    <link href="https://puzzle9.github.io/posts/1479d6d2/"/>
+    <id>https://puzzle9.github.io/posts/1479d6d2/</id>
+    <published>2022-09-01T16:54:46.000Z</published>
+    <updated>2022-09-01T19:35:06.325Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>当年的搞机经验随着安卓大版本的更新加上又不关注而出现了错误</p></blockquote><h1 id="无线调试"><a href="#无线调试" class="headerlink" title="无线调试"></a>无线调试</h1><ul><li><a href="https://developer.android.com/studio/command-line/adb?hl=zh-cn">https://developer.android.com/studio/command-line/adb?hl=zh-cn</a></li><li><a href="https://zhuanlan.zhihu.com/p/336660319">https://zhuanlan.zhihu.com/p/336660319</a></li></ul><h2 id="安卓-10-以上"><a href="#安卓-10-以上" class="headerlink" title="安卓 10 以上"></a>安卓 <code>10</code> 以上</h2><p>出现了 <code>匹配码</code></p><ul><li><code>adb pair device_ip_address:port-for-pair</code></li><li><code>adb connect device_ip_address:port-for-connect</code></li></ul><h2 id="安卓-10-以下"><a href="#安卓-10-以下" class="headerlink" title="安卓 10 以下"></a>安卓 <code>10</code> 以下</h2><ul><li><code>adb connect device_ip_address:5555</code></li></ul><h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><h3 id="failed-to-connect-to-device-ip-address-port"><a href="#failed-to-connect-to-device-ip-address-port" class="headerlink" title="failed to connect to device_ip_address:port"></a><code>failed to connect to device_ip_address:port</code></h3><ul><li>内网是否互通</li><li>是否先连接了<code>匹配码</code></li></ul>]]></content>
+    
+    
+    <summary type="html">安卓 adb 命令记录</summary>
+    
+    
+    
+    
+    <category term="android" scheme="https://puzzle9.github.io/tags/android/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>soul</title>
+    <link href="https://puzzle9.github.io/posts/d09fcb3/"/>
+    <id>https://puzzle9.github.io/posts/d09fcb3/</id>
+    <published>2022-09-01T14:50:11.000Z</published>
+    <updated>2022-09-01T19:35:11.175Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>I see you everyday<br>每天见到你的时候<br>Dreaming about the things that I would say<br>一直梦想着能跟你吐露真心<br>Tuesday when you looked my way<br>周二那天 所幸你望了我一眼</p></blockquote><h1 id="一些地址"><a href="#一些地址" class="headerlink" title="一些地址"></a>一些地址</h1><ul><li><code>https://w3.soulapp.cn/activity/#/web/user?targetUserIdEcpt=$&#123;UserIdEcpt&#125;</code> 个人主页</li><li><code>https://app.soulapp.cn/app/#/interest/</code> 测试页面</li><li><code>https://app.soulapp.cn/avator/#/avatar/create?sex=$&#123;sex&#125;</code> 捏脸 <code>sex</code> <code>0</code> 女 <code>1</code> 男</li></ul><h1 id="聊天记录"><a href="#聊天记录" class="headerlink" title="聊天记录"></a>聊天记录</h1><h2 id="开局"><a href="#开局" class="headerlink" title="开局"></a>开局</h2><ul><li>一个 <code>root</code> 安卓手机 或者 <code>soul</code> 备份</li></ul><h2 id="记录文件"><a href="#记录文件" class="headerlink" title="记录文件"></a>记录文件</h2><ul><li><p><code>/data/data/cn.soulapp.android/files/easemobDB/$&#123;uid&#125;.db</code> <code>新版好像放弃了</code></p></li><li><p><code>/data/data/cn.soulapp.android/files/objectbox/$&#123;uid&#125;db/data.mdb</code></p></li><li><p><code>uid</code> 是自己帐号ID</p></li></ul><h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><ul><li><code>研究中</code></li></ul><h1 id="参考地址"><a href="#参考地址" class="headerlink" title="参考地址"></a>参考地址</h1><ul><li><code>https://github.com/search?p=1&amp;q=soulapp.cn&amp;type=Code</code></li></ul>]]></content>
+    
+    
+    <summary type="html">研究</summary>
+    
+    
+    
+    
+    <category term="soul" scheme="https://puzzle9.github.io/tags/soul/"/>
+    
+  </entry>
   
   <entry>
     <title>那多次的互联网入坑指南</title>
@@ -421,55 +459,6 @@
     <category term="gift" scheme="https://puzzle9.github.io/tags/gift/"/>
     
     <category term="wedding" scheme="https://puzzle9.github.io/tags/wedding/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>部署 php</title>
-    <link href="https://puzzle9.github.io/posts/dbb1ac5/"/>
-    <id>https://puzzle9.github.io/posts/dbb1ac5/</id>
-    <published>2021-04-19T05:07:39.000Z</published>
-    <updated>2022-07-29T18:35:35.932Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="所需环境"><a href="#所需环境" class="headerlink" title="所需环境"></a>所需环境</h1><ul><li><a href="https://nginx.org/">nginx</a> || <a href="https://www.apache.org/">apache</a></li><li><a href="https://www.mysql.com/cn/">mysql</a> || <a href="https://mariadb.org/">mariadb</a></li><li><a href="https://redis.io/">reids</a></li><li><a href="https://www.php.net/">php</a></li><li><a href="https://getcomposer.org/">composer</a></li><li><a href="https://git-scm.com/">git</a></li></ul><h1 id="环境安装"><a href="#环境安装" class="headerlink" title="环境安装"></a>环境安装</h1><h2 id="自动"><a href="#自动" class="headerlink" title="自动"></a>自动</h2><ul><li>宝塔 <del>虽然我不喜欢这个 可奈何不住人家人气高啊</del></li><li><a href="https://oneinstack.com/">https://oneinstack.com/</a></li></ul><h2 id="手动"><a href="#手动" class="headerlink" title="手动"></a>手动</h2><ul><li><a href="../d2b5014">Debian9-x64-Install-Vhost</a></li></ul><h1 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h1><ul><li>项目名称 <code>example</code></li><li>访问域名 <code>example.test</code></li><li>项目目录 <code>/www/wwwroot/web</code></li></ul><h2 id="框架判断"><a href="#框架判断" class="headerlink" title="框架判断"></a>框架判断</h2><ul><li>如果 <code>/www/wwwroot/web</code> 存在 <code>composer.json</code> 文件 那里面的 <code>name</code> 字段通常是 <code>框架名称</code></li><li>人肉分析</li></ul><h2 id="laravel-lumen"><a href="#laravel-lumen" class="headerlink" title="laravel || lumen"></a><a href="https://laravel.com/">laravel</a> || <a href="https://lumen.laravel.com/">lumen</a></h2><h3 id="获取源代码"><a href="#获取源代码" class="headerlink" title="获取源代码"></a>获取源代码</h3><h4 id="git-方式"><a href="#git-方式" class="headerlink" title="git 方式"></a><code>git</code> 方式</h4><h5 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h5><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /www/wwwroot/</span><br><span class="line"></span><br><span class="line">git <span class="built_in">clone</span> --depth 1 git@github.com:puzzle/project.git web</span><br><span class="line"><span class="comment"># 或者</span></span><br><span class="line">git <span class="built_in">clone</span> --depth 1 https://github.com/puzzle/project.git web</span><br></pre></td></tr></table></figure><h4 id="文件-方式"><a href="#文件-方式" class="headerlink" title="文件 方式"></a><code>文件</code> 方式</h4><ul><li>下载成压缩包 服务端解压</li></ul><h3 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h3><blockquote><p>大多都是类似的 具体可看相应注释</p></blockquote><h4 id="复制"><a href="#复制" class="headerlink" title="复制"></a>复制</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /www/wwwroot/web</span><br><span class="line"><span class="built_in">cp</span> .env.example .<span class="built_in">env</span></span><br></pre></td></tr></table></figure><h4 id="修改-env-文件"><a href="#修改-env-文件" class="headerlink" title="修改 .env 文件"></a>修改 <code>.env</code> 文件</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"># 项目名称</span><br><span class="line">APP_NAME=example</span><br><span class="line"># 当前运行环境 可选值 local 本地 | production 线上 | ...</span><br><span class="line">APP_ENV=production</span><br><span class="line"># 密钥 需运行生成</span><br><span class="line">APP_KEY=base64:hello</span><br><span class="line"># 是否开启调试模式</span><br><span class="line">APP_DEBUG=false</span><br><span class="line"># 当前运行网址</span><br><span class="line">APP_URL=http://example.test</span><br><span class="line"></span><br><span class="line"># 数据库连接类型</span><br><span class="line">DB_CONNECTION=mysql</span><br><span class="line"># 数据库连接地址</span><br><span class="line">DB_HOST=127.0.0.1</span><br><span class="line"># 数据库端口</span><br><span class="line">DB_PORT=3306</span><br><span class="line"># 数据库表名</span><br><span class="line">DB_DATABASE=deploy</span><br><span class="line"># 数据库用户名</span><br><span class="line">DB_USERNAME=root</span><br><span class="line"># 数据库密码</span><br><span class="line">DB_PASSWORD=root</span><br><span class="line"></span><br><span class="line"># redis 连接地址</span><br><span class="line">REDIS_HOST=127.0.0.1</span><br><span class="line"># redis 密码</span><br><span class="line">REDIS_PASSWORD=root</span><br><span class="line"># redis 端口号</span><br><span class="line">REDIS_PORT=6379</span><br><span class="line"></span><br><span class="line"># session 储存位置 可选值 file | redis | ...</span><br><span class="line">SESSION_DRIVER=redis</span><br><span class="line"></span><br><span class="line"># 队列执行方式 可选值 sync 同步 | redis 异步 | ...</span><br><span class="line">QUEUE_CONNECTION=redis</span><br></pre></td></tr></table></figure><h3 id="安装-composer-包"><a href="#安装-composer-包" class="headerlink" title="安装 composer 包"></a>安装 <code>composer 包</code></h3><h4 id="检查版本"><a href="#检查版本" class="headerlink" title="检查版本"></a>检查版本</h4><p><code>composer --version</code></p><p>输出应该类似</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Composer version 2.0.12 2021-04-01 10:14:59</span><br></pre></td></tr></table></figure><h4 id="安装扩展包"><a href="#安装扩展包" class="headerlink" title="安装扩展包"></a>安装扩展包</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /www/wwwroot/web</span><br><span class="line">composer install -vvv</span><br></pre></td></tr></table></figure><p>输出应该类似</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Package manifest generated successfully.</span><br><span class="line">1 packages you are using are looking for funding.</span><br><span class="line">Use the `composer fund` command to find out more!</span><br></pre></td></tr></table></figure><p>这时候 <code>/www/wwwroot/web</code> 就会存在 <code>vendor</code> 和 <code>composer.lock</code> 文件了</p><h3 id="生成-key"><a href="#生成-key" class="headerlink" title="生成 key"></a>生成 <code>key</code></h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /www/wwwroot/web</span><br><span class="line">php artisan key:generate</span><br></pre></td></tr></table></figure><p>运行成功后 <code>.env</code> 文件 <code>APP_KEY</code> 将会自动填充值</p><h3 id="目录映射"><a href="#目录映射" class="headerlink" title="目录映射"></a>目录映射</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /www/wwwroot/web</span><br><span class="line">php artisan storage:<span class="built_in">link</span></span><br></pre></td></tr></table></figure><h3 id="优化应用"><a href="#优化应用" class="headerlink" title="优化应用"></a>优化应用</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /www/wwwroot/web</span><br><span class="line"><span class="comment"># 修改 .env 文件后 需要重新运行此命令</span></span><br><span class="line">php artisan config:cache</span><br><span class="line">php artisan route:cache</span><br><span class="line">php artisan view:cache</span><br></pre></td></tr></table></figure><h3 id="设置文件夹权限"><a href="#设置文件夹权限" class="headerlink" title="设置文件夹权限"></a>设置文件夹权限</h3><ul><li><del>如果 当前终端登录用户 和 <code>php-fpm</code> 用户一致 可不用设置</del></li></ul><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /www/wwwroot/web</span><br><span class="line"><span class="built_in">chmod</span> 777 -R bootstrap storage</span><br></pre></td></tr></table></figure><h3 id="迁移数据库"><a href="#迁移数据库" class="headerlink" title="迁移数据库"></a>迁移数据库</h3><h4 id="根据-sql-判断执行顺序"><a href="#根据-sql-判断执行顺序" class="headerlink" title="根据 sql 判断执行顺序"></a>根据 <code>sql</code> 判断执行顺序</h4><h4 id="根据实际情况运行迁移命令"><a href="#根据实际情况运行迁移命令" class="headerlink" title="根据实际情况运行迁移命令"></a>根据实际情况运行迁移命令</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /www/wwwroot/web</span><br><span class="line">php artisan migrate</span><br></pre></td></tr></table></figure><h3 id="配置-nginx-apache"><a href="#配置-nginx-apache" class="headerlink" title="配置 nginx | apache"></a>配置 <code>nginx</code> | <code>apache</code></h3><h4 id="nginx"><a href="#nginx" class="headerlink" title="nginx"></a><code>nginx</code></h4><blockquote><p><a href="https://laravel.com/docs/8.x/deployment#nginx">https://laravel.com/docs/8.x/deployment#nginx</a></p></blockquote><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">    listen 80;</span><br><span class="line">    server_name example.test;</span><br><span class="line">    root /www/wwwroot/web/public;</span><br><span class="line"></span><br><span class="line">    add_header X-Frame-Options &quot;SAMEORIGIN&quot;;</span><br><span class="line">    add_header X-Content-Type-Options &quot;nosniff&quot;;</span><br><span class="line"></span><br><span class="line">    index index.php;</span><br><span class="line"></span><br><span class="line">    charset utf-8;</span><br><span class="line"></span><br><span class="line">    location / &#123;</span><br><span class="line">        try_files $uri $uri/ /index.php?$query_string;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    location = /favicon.ico &#123; access_log off; log_not_found off; &#125;</span><br><span class="line">    location = /robots.txt  &#123; access_log off; log_not_found off; &#125;</span><br><span class="line"></span><br><span class="line">    error_page 404 /index.php;</span><br><span class="line"></span><br><span class="line">    location ~ \.php$ &#123;</span><br><span class="line">        fastcgi_pass unix:/var/run/php/php7.4-fpm.sock;</span><br><span class="line">        fastcgi_param SCRIPT_FILENAME $realpath_root$fastcgi_script_name;</span><br><span class="line">        include fastcgi_params;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    location ~ /\.(?!well-known).* &#123;</span><br><span class="line">        deny all;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h4 id="apache"><a href="#apache" class="headerlink" title="apache"></a><code>apache</code></h4><blockquote><p>todo</p></blockquote><h4 id="访问验证"><a href="#访问验证" class="headerlink" title="访问验证"></a>访问验证</h4><p>如果配置成功的话 访问 <code>example.test</code> 就可以看到页面了</p><h3 id="定时任务-按需要添加"><a href="#定时任务-按需要添加" class="headerlink" title="定时任务(按需要添加)"></a>定时任务(按需要添加)</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">* * * * * /usr/bin/php /www/wwwroot/web/artisan schedule:run &gt;&gt; /dev/null 2&gt;&amp;1</span><br></pre></td></tr></table></figure><h3 id="队列-按需要添加"><a href="#队列-按需要添加" class="headerlink" title="队列(按需要添加)"></a>队列(按需要添加)</h3><h4 id="supervisor"><a href="#supervisor" class="headerlink" title="supervisor"></a><a href="../6992eceb">supervisor</a></h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[program:example]</span><br><span class="line">process_name=%(program_name)s</span><br><span class="line">command=/usr/bin/php /www/wwwroot/web/artisan horizon</span><br><span class="line">autostart=true</span><br><span class="line">autorestart=true</span><br><span class="line">user=www</span><br><span class="line">redirect_stderr=true</span><br><span class="line">stdout_logfile=/www/wwwroot/web/storage/logs/supervisord.log</span><br></pre></td></tr></table></figure><h3 id="错误"><a href="#错误" class="headerlink" title="错误"></a>错误</h3><ul><li>可根据 <code>/www/wwwroot/web/storage/logs/</code> 排查</li></ul><h3 id="其他参考文档"><a href="#其他参考文档" class="headerlink" title="其他参考文档"></a>其他参考文档</h3><ul><li><a href="https://laravel.com/docs/8.x/deployment">laravel deployment</a></li><li><a href="../dc688cb0">Laravel-Online</a></li></ul>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;所需环境&quot;&gt;&lt;a href=&quot;#所需环境&quot; class=&quot;headerlink&quot; title=&quot;所需环境&quot;&gt;&lt;/a&gt;所需环境&lt;/h1&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://nginx.org/&quot;&gt;nginx&lt;/a&gt; || &lt;a href=&quot;https</summary>
-      
-    
-    
-    
-    <category term="deploy" scheme="https://puzzle9.github.io/categories/deploy/"/>
-    
-    
-    <category term="php" scheme="https://puzzle9.github.io/tags/php/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>部署</title>
-    <link href="https://puzzle9.github.io/posts/26b9d431/"/>
-    <id>https://puzzle9.github.io/posts/26b9d431/</id>
-    <published>2021-04-19T05:06:32.000Z</published>
-    <updated>2022-07-29T18:35:35.932Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="缘由"><a href="#缘由" class="headerlink" title="缘由"></a>缘由</h1><p>好像 对于一个 <code>web</code>编程</p><p>没人去写如何部署</p><p>好像 这玩意已经是 从开始 就晓得 如何去做的事情了</p><p>一个是开发处理 一个是运维处理</p><p>然后 除此之外</p><p>还可以怎么做呢</p><h1 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h1><h2 id="php"><a href="#php" class="headerlink" title="php"></a><a href="../dbb1ac5">php</a></h2><blockquote><p>当然 这操作起来可能确实比较麻烦 所以 为啥不直接镜像呢</p></blockquote>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;缘由&quot;&gt;&lt;a href=&quot;#缘由&quot; class=&quot;headerlink&quot; title=&quot;缘由&quot;&gt;&lt;/a&gt;缘由&lt;/h1&gt;&lt;p&gt;好像 对于一个 &lt;code&gt;web&lt;/code&gt;编程&lt;/p&gt;
-&lt;p&gt;没人去写如何部署&lt;/p&gt;
-&lt;p&gt;好像 这玩意已经是 从开始 就晓得 如何</summary>
-      
-    
-    
-    
-    <category term="deploy" scheme="https://puzzle9.github.io/categories/deploy/"/>
-    
     
   </entry>
   
