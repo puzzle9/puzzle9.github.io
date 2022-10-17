@@ -6,7 +6,7 @@
   <link href="https://puzzle9.github.io/atom.xml" rel="self"/>
   
   <link href="https://puzzle9.github.io/"/>
-  <updated>2022-09-19T04:42:18.126Z</updated>
+  <updated>2022-10-17T05:49:29.925Z</updated>
   <id>https://puzzle9.github.io/</id>
   
   <author>
@@ -15,6 +15,23 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>git</title>
+    <link href="https://puzzle9.github.io/posts/518e617c/"/>
+    <id>https://puzzle9.github.io/posts/518e617c/</id>
+    <published>2022-10-17T05:42:45.000Z</published>
+    <updated>2022-10-17T05:49:29.925Z</updated>
+    
+    <content type="html"><![CDATA[<p>不得不说 这玩意确实强大 感谢 <code>作者</code></p><h1 id="浅克隆后"><a href="#浅克隆后" class="headerlink" title="浅克隆后"></a>浅克隆后</h1><h2 id="完成克隆"><a href="#完成克隆" class="headerlink" title="完成克隆"></a>完成克隆</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git fetch --unshallow</span><br><span class="line">git config remote.origin.fetch <span class="string">&#x27;+refs/heads/*:refs/remotes/origin/*&#x27;</span></span><br></pre></td></tr></table></figure><h2 id="取回所有分支"><a href="#取回所有分支" class="headerlink" title="取回所有分支"></a>取回所有分支</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git fetch --tags</span><br></pre></td></tr></table></figure><h1 id="包-bundle"><a href="#包-bundle" class="headerlink" title="包 bundle"></a>包 <code>bundle</code></h1><h2 id="打包"><a href="#打包" class="headerlink" title="打包"></a>打包</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git bundle create name.bundle master</span><br></pre></td></tr></table></figure><h2 id="解包"><a href="#解包" class="headerlink" title="解包"></a>解包</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> --depth 1 ./name.bundle -b master</span><br></pre></td></tr></table></figure><h1 id="服务器"><a href="#服务器" class="headerlink" title="服务器"></a>服务器</h1><h2 id="开启"><a href="#开启" class="headerlink" title="开启"></a>开启</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git daemon --verbose --export-all --base-path=.</span><br></pre></td></tr></table></figure><h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> git://ip/name</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+    <summary type="html">git 那神奇的命令</summary>
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>医院科室</title>
@@ -437,23 +454,6 @@
     
     
     <category term="js" scheme="https://puzzle9.github.io/tags/js/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>费用感觉</title>
-    <link href="https://puzzle9.github.io/posts/9aaf5a26/"/>
-    <id>https://puzzle9.github.io/posts/9aaf5a26/</id>
-    <published>2021-05-19T08:11:44.000Z</published>
-    <updated>2022-07-29T18:35:35.932Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h1><p>怎么说呢</p><p>自己当时想的是</p><blockquote><p>在费用允许的情况下提供给客户最优解</p></blockquote><p>然后 可能是真的因为自己穷吧</p><p>所以 在世间 对这些和钱有关的事情</p><p>不晓得 如何操作</p><p>又不愿意去想他</p><p>当然 贵也有贵的道理</p><p>然后 可是基于目前来看</p><p>好像 另一种便宜的也能达到自己的预期</p><p>看着他人 消费</p><p>不晓得自己为何难受</p><p>因为在这钱 和自己没有关系吗</p><p>不过 缺失应该佩服这种</p><p>他提供给了社会另一种的解决方案</p><p>能用钱解决的都不算问题</p>]]></content>
-    
-    
-    <summary type="html">来自心中那一丝丝不知道何来的想法</summary>
-    
-    
-    
     
   </entry>
   
