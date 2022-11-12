@@ -6,7 +6,7 @@
   <link href="https://puzzle9.github.io/atom.xml" rel="self"/>
   
   <link href="https://puzzle9.github.io/"/>
-  <updated>2022-10-23T06:33:06.219Z</updated>
+  <updated>2022-11-12T10:39:59.457Z</updated>
   <id>https://puzzle9.github.io/</id>
   
   <author>
@@ -15,6 +15,40 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>蓝牙鼠标</title>
+    <link href="https://puzzle9.github.io/posts/f03cd66b/"/>
+    <id>https://puzzle9.github.io/posts/f03cd66b/</id>
+    <published>2022-11-12T09:05:41.000Z</published>
+    <updated>2022-11-12T10:39:59.457Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><blockquote><p>切换双系统时不用重新配对蓝牙鼠标 当然 最简单的是买一个支持此功能的鼠标</p></blockquote><blockquote><p>正常情况下 重启电脑的次数不多</p></blockquote><h1 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h1><h2 id="在-linux-中连接鼠标"><a href="#在-linux-中连接鼠标" class="headerlink" title="在 linux 中连接鼠标"></a>在 <code>linux</code> 中连接鼠标</h2><p><img src="/posts/f03cd66b/linux_connect.png" alt="已经配置好了 所以和 `win` 显示的地址相同"></p><p>假设此处显示的地址为 <code>2B:B4:8D:52:7B:EC</code></p><h2 id="win-下连接鼠标"><a href="#win-下连接鼠标" class="headerlink" title="win 下连接鼠标"></a><code>win</code> 下连接鼠标</h2><h3 id="用设备管理器查看鼠标-MAC"><a href="#用设备管理器查看鼠标-MAC" class="headerlink" title="用设备管理器查看鼠标 MAC"></a>用设备管理器查看鼠标 <code>MAC</code></h3><p><img src="/posts/f03cd66b/win_connect.png"><br><code>c397369c4843</code> 就是鼠标的 <code>MAC</code> 地址</p><h3 id="下载-psexec"><a href="#下载-psexec" class="headerlink" title="下载 psexec"></a>下载 <code>psexec</code></h3><ul><li><a href="https://learn.microsoft.com/zh-cn/sysinternals/downloads/psexec">https://learn.microsoft.com/zh-cn/sysinternals/downloads/psexec</a></li></ul><blockquote><p>此处所需注册表权限 正常途径打开看不到蓝牙相关信息</p></blockquote><h3 id="使用-psexec-打开-regedit-注册表"><a href="#使用-psexec-打开-regedit-注册表" class="headerlink" title="使用 psexec 打开 regedit 注册表"></a>使用 <code>psexec</code> 打开 <code>regedit</code> 注册表</h3><p><img src="/posts/f03cd66b/psexec_regedit.png"></p><p>进入 <code>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\BTHPORT\Parameters\Keys</code></p><p>在目录中寻找鼠标 <code>MAC</code> 地址 <code>c397369c4843</code></p><p><img src="/posts/f03cd66b/psexec_regedit_mouse.png"></p><p>截图并记录其中的</p><ul><li><code>EDIV</code> &#x3D; <code>39160</code></li><li><code>ERand</code> &#x3D; <code>11022681155342728302</code></li><li><code>LTK</code> &#x3D; <code>cf 37 0f d5 d8 68 8d ce 89 44 8b 20 bf 0a 4b 71</code></li></ul><h2 id="重启到-linux"><a href="#重启到-linux" class="headerlink" title="重启到 linux"></a>重启到 <code>linux</code></h2><p>关闭蓝牙</p><p>进入 <code>/var/lib/bluetooth/$&#123;硬件蓝牙MAC&#125;</code> 目录</p><p>重命名 <code>$&#123;linux 鼠标MAC 2B:B4:8D:52:7B:EC&#125;</code> 为 <code>$&#123;win 鼠标MAC C3:97:36:9C:48:43&#125;</code></p><p>进入 <code>$&#123;win 鼠标MAC C3:97:36:9C:48:43&#125;</code> 目录</p><p>编辑 <code>info</code> 文件中的 <code>LongTermKey</code> 块</p><h3 id="源"><a href="#源" class="headerlink" title="源"></a>源</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[LongTermKey]</span><br><span class="line">Key=7B4C2B57D8BD9D814B0F8E77DA542378</span><br><span class="line">Authenticated=0</span><br><span class="line">EncSize=16</span><br><span class="line">EDiv=17867</span><br><span class="line">Rand=9467824016339893520</span><br></pre></td></tr></table></figure><h3 id="修改后"><a href="#修改后" class="headerlink" title="修改后"></a>修改后</h3><ul><li><code>Key</code> 对应 <code>LTK</code> 需 删除空格 转为 大写</li><li><code>EDiv</code> 对应 <code>EDIV</code> 10进制 位数可能不同</li><li><code>ERand</code> 对应 <code>Rand</code> 10进制 位数可能不同</li></ul><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[LongTermKey]</span><br><span class="line">Key=CF370FD5D8688DCE89448B20BF0A4B71</span><br><span class="line">Authenticated=0</span><br><span class="line">EncSize=16</span><br><span class="line">EDiv=39160</span><br><span class="line">Rand=11022681155342728302</span><br></pre></td></tr></table></figure><p>重启蓝牙服务 <code>systemctl restart bluetooth</code></p><h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><ul><li>不出意外的话 鼠标应该连接正常了</li><li>可以再重启到 <code>win</code> 试下</li></ul><h1 id="常见错误"><a href="#常见错误" class="headerlink" title="常见错误"></a>常见错误</h1><h2 id="psexec-找不到网络名"><a href="#psexec-找不到网络名" class="headerlink" title="psexec 找不到网络名"></a><code>psexec</code> 找不到网络名</h2><p><img src="/posts/f03cd66b/psexec_regedit_error_admin$.png"></p><h3 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h3><p>因为关闭了 <code>ADMIN$</code> 共享导致</p><p>可以进入 <code>计算机管理</code> <code>共享</code> 中查看 是否有 <code>ADMIN$</code> 共享<br><img src="/posts/f03cd66b/share_admin$.png"></p><h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><p>以 <code>管理员</code> 运行 <code>regedit</code></p><p>进入 <code>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\lanmanserver\parameters</code><br>新增或修改 <code>AutoShareWks</code> 和 <code>AutoShareServer</code> 格式为 <code>REG_DWORD</code> 赋值 <code>1</code></p><p>进入 <code>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa</code><br>新增或修改 <code>restrictanonymous</code> 格式为 <code>REG_DWORD</code> 赋值 <code>1</code></p><p>重启电脑</p><p><code>psexec</code>运行完成后可以考虑反方向操作再给关闭 <code>ADMIN$</code> 共享</p><h1 id="参考地址"><a href="#参考地址" class="headerlink" title="参考地址"></a>参考地址</h1><ul><li><a href="https://zhuanlan.zhihu.com/p/466962255">https://zhuanlan.zhihu.com/p/466962255</a></li><li><a href="https://blog.csdn.net/weixin_34235457/article/details/91585503">https://blog.csdn.net/weixin_34235457/article/details/91585503</a></li><li><a href="https://wiki.archlinux.org/title/Bluetooth#Dual_boot_pairing">https://wiki.archlinux.org/title/Bluetooth#Dual_boot_pairing</a></li></ul>]]></content>
+    
+    
+    <summary type="html">win linux 共用同一蓝牙鼠标</summary>
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>grpc</title>
+    <link href="https://puzzle9.github.io/posts/2b44e58c/"/>
+    <id>https://puzzle9.github.io/posts/2b44e58c/</id>
+    <published>2022-11-09T15:26:03.000Z</published>
+    <updated>2022-11-09T15:37:47.096Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>兴趣是最大的老师 努力作的项目也是</p></blockquote><h1 id="初识"><a href="#初识" class="headerlink" title="初识"></a>初识</h1><ul><li>它是 <code>google</code> 的产物</li><li>他目前有很多人用</li><li>她和<code>restful</code>有这天壤地别</li><li>有着<code>服务端</code>和<code>客户端</code></li></ul><h1 id="初探"><a href="#初探" class="headerlink" title="初探"></a>初探</h1><ul><li>用 <code>proto</code> 文件作为 <code>沟通的桥梁</code></li><li>可以用 <code>protoc</code> 生成指定语言的 <code>插件包</code></li></ul><h1 id="初试"><a href="#初试" class="headerlink" title="初试"></a>初试</h1><h2 id="以-xray-为目标-以-nestjs-入手"><a href="#以-xray-为目标-以-nestjs-入手" class="headerlink" title="以 xray 为目标 以 nestjs 入手"></a>以 <code>xray</code> 为目标 以 <code>nestjs</code> 入手</h2><h3 id="获取-xray-源码"><a href="#获取-xray-源码" class="headerlink" title="获取 xray 源码"></a>获取 <code>xray</code> 源码</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> --depth 1 https://github.com/XTLS/Xray-core.git</span><br></pre></td></tr></table></figure><h3 id="安装编译工具"><a href="#安装编译工具" class="headerlink" title="安装编译工具"></a>安装编译工具</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># arch</span></span><br><span class="line">pacman -S protoc</span><br></pre></td></tr></table></figure><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn global add protoc-gen-ts</span><br></pre></td></tr></table></figure><h3 id="编译-proto-生成-扩展-文件"><a href="#编译-proto-生成-扩展-文件" class="headerlink" title="编译 proto 生成 扩展 文件"></a>编译 <code>proto</code> 生成 <code>扩展</code> 文件</h3><blockquote><p>可能会有错误 具体讨论</p></blockquote><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">protoc -I=./Xray-core --ts_out=./Xray-core_ts ./**/*.proto</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+    <summary type="html">研究ing</summary>
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>grub 丢失</title>
@@ -394,59 +428,6 @@
     <summary type="html">关于聊天的感悟</summary>
     
     
-    
-    
-  </entry>
-  
-  <entry>
-    <title>假装相信对方可以办好这件事</title>
-    <link href="https://puzzle9.github.io/posts/44e6bcf3/"/>
-    <id>https://puzzle9.github.io/posts/44e6bcf3/</id>
-    <published>2021-11-11T09:04:23.000Z</published>
-    <updated>2022-07-29T18:35:35.932Z</updated>
-    
-    <content type="html"><![CDATA[<p>对 从 <code>求人 办事</code> 开始</p><p>为啥要用 <code>求人</code> 开始呢</p><p>因为这事 只有对方可以办成 自己一己之力不成</p><p>然后吧</p><p>我觉得 再求人的时候 留一手是很正常的一件事情</p><p>当然 我也觉得 留下来的这一手不要让其他人晓得是应有的尊重</p><p>不然我就觉得 你既然找我 那就是相信我 而在找我的时候 去找其他人 这是什么情况</p><p>我自己也有过 也遇到过</p><p>感觉 都是很难过的事情</p><p>仔细想想 缘由吧</p><p>大概源于 自己开始找对方之前 进行了一个评估</p><p>然后 根据这个评估进行处理</p><p>这应该就是常说的 <code>A/B</code> 方案</p><p>我觉得最容易复现的就是借钱</p><p>大概就是</p><p>一次性问好多人借相同的金额</p><p>至于缘由吧 我想过 没想出一个合适的结果</p><p>下来复现的就是</p><p>假定在厕所没纸</p><p>我觉得这种问多个人是人之常情 可我又觉得 不能群发 至少得一个未回应的情况下再去问其他人</p><p>或许 我的感觉就是如此吧</p><p>生活嘛</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;对 从 &lt;code&gt;求人 办事&lt;/code&gt; 开始&lt;/p&gt;
-&lt;p&gt;为啥要用 &lt;code&gt;求人&lt;/code&gt; 开始呢&lt;/p&gt;
-&lt;p&gt;因为这事 只有对方可以办成 自己一己之力不成&lt;/p&gt;
-&lt;p&gt;然后吧&lt;/p&gt;
-&lt;p&gt;我觉得 再求人的时候 留一手是很正常的一件事情&lt;/p&gt;
-&lt;p&gt;</summary>
-      
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>成长 小男孩</title>
-    <link href="https://puzzle9.github.io/posts/47e33e4c/"/>
-    <id>https://puzzle9.github.io/posts/47e33e4c/</id>
-    <published>2021-11-04T10:12:00.000Z</published>
-    <updated>2022-07-29T18:35:35.935Z</updated>
-    
-    <content type="html"><![CDATA[<p>好像 总是在悲观的时候 会写点东西</p><p>来告诉自己要记录一下事情</p><p>来告诉自己要活下去</p><p>然后 生活嘛</p><p>总是发醪糟的时候</p><p>然后 记得在 <code>知乎</code> 看到过一句话</p><blockquote><p>我希望他永远不要长大 然后换个妈妈陪他玩</p></blockquote><p>好像 每个男人心中都有个小男孩</p><p>然后 走进他的心 就是照顾好他的小男孩</p><p>又好像 那个小男孩 他好会躲藏</p><p>有时候 不是他没有 而是他不能被发现了</p><p>生活总是赋予他好多责任 好多规则</p><p>在这个圈内 小男孩久而久之的就没了</p><p>然后 又看到了一句话</p><blockquote><p>我多想做个小孩 在怀里撒娇 期待你的关注</p></blockquote><p>就记得小时候特别爱生病</p><p>然后论原因的话 </p><p>就是家里人一直陪着自己</p><p>那种感觉是另一种美好</p><p>记得原先看过一个剧 名字又忘记了</p><p>里面说</p><blockquote><p>有的人用童年治愈一生 而有的人用一生去治愈童年</p></blockquote><p>我 好像确实不想长大</p><p>和 <code>soul</code> 那里面的 <code>灵魂</code> 一样</p><p>差一个东西 而我却不知道是什么</p><p>我想 是不是以后都会这样了</p><p>想想自己的蠢事</p><p>趋同厉害的</p><p>哎</p><p>哦对 还有一个</p><p>为什么要努力</p><blockquote><p>为了过上比现在好的生活 </p></blockquote><p>然后 有时候去某些地方 感觉就像 <code>贫民窟</code></p><p>我想 努力的缘由就在这里吧</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;好像 总是在悲观的时候 会写点东西&lt;/p&gt;
-&lt;p&gt;来告诉自己要记录一下事情&lt;/p&gt;
-&lt;p&gt;来告诉自己要活下去&lt;/p&gt;
-&lt;p&gt;然后 生活嘛&lt;/p&gt;
-&lt;p&gt;总是发醪糟的时候&lt;/p&gt;
-&lt;p&gt;然后 记得在 &lt;code&gt;知乎&lt;/code&gt; 看到过一句话&lt;/p&gt;
-&lt;blockquote</summary>
-      
-    
-    
-    
-    <category term="Grow" scheme="https://puzzle9.github.io/categories/Grow/"/>
     
     
   </entry>
