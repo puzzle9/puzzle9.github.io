@@ -6,7 +6,7 @@
   <link href="https://puzzle9.github.io/atom.xml" rel="self"/>
   
   <link href="https://puzzle9.github.io/"/>
-  <updated>2022-11-12T10:39:59.457Z</updated>
+  <updated>2022-11-20T09:52:02.950Z</updated>
   <id>https://puzzle9.github.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>需求与过度设计</title>
+    <link href="https://puzzle9.github.io/posts/5c9c0e4c/"/>
+    <id>https://puzzle9.github.io/posts/5c9c0e4c/</id>
+    <published>2022-11-20T09:37:42.000Z</published>
+    <updated>2022-11-20T09:52:02.950Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="疫情下的责任与义务"><a href="#疫情下的责任与义务" class="headerlink" title="疫情下的责任与义务"></a>疫情下的责任与义务</h1><blockquote><p>人啊 都要为自己想做的事情奋斗一下 不然之后想起来 可能会后悔莫及且更加后悔</p></blockquote><h1 id="取东西"><a href="#取东西" class="headerlink" title="取东西"></a>取东西</h1><h2 id="设定"><a href="#设定" class="headerlink" title="设定"></a>设定</h2><p>把一片土地围起来</p><p>再分成几大不通的区域</p><p>每个区域有一个入口</p><p>区域内的人不能出来</p><p>外面的人进了这片土地也不能出去</p><p>区域内的可以把待取的东西登记到工作人员给的纸张上</p><p>再由他们同一取</p><h2 id="问题点"><a href="#问题点" class="headerlink" title="问题点"></a>问题点</h2><p>用纸登记起来太麻烦 需要填写 货物类型 手机尾号 自己所在的区域</p><p>工作人员要定期巡查 看有没有达到一定的量 再一起去取回来放到区域</p><p>区域内的再等待他们回来后再自己寻找自己的物品</p><h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>有一款在线登记软件</p><p>用户选择区域填写后</p><p>工作人员那边收到通知</p><p>取货后用户这边也会收到通知</p><p>然后下来拿货即可</p><h2 id="现有解决方案"><a href="#现有解决方案" class="headerlink" title="现有解决方案"></a>现有解决方案</h2><p>设定改为配送员可以进出</p><p>再给每个区域放一个货物架</p><p>再由土地外的配送员直接进来把货物放到指定的货物架</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;疫情下的责任与义务&quot;&gt;&lt;a href=&quot;#疫情下的责任与义务&quot; class=&quot;headerlink&quot; title=&quot;疫情下的责任与义务&quot;&gt;&lt;/a&gt;疫情下的责任与义务&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;人啊 都要为自己想做的事情奋斗一下 不然之后想起来 可能会</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>蓝牙鼠标</title>
@@ -412,23 +433,6 @@
     <category term="php" scheme="https://puzzle9.github.io/tags/php/"/>
     
     <category term="mysql" scheme="https://puzzle9.github.io/tags/mysql/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>聊天中的了三两事</title>
-    <link href="https://puzzle9.github.io/posts/b3833fe0/"/>
-    <id>https://puzzle9.github.io/posts/b3833fe0/</id>
-    <published>2021-12-31T08:24:00.000Z</published>
-    <updated>2022-07-29T18:35:35.938Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h1><p>从何说起呢</p><p>聊天 我们彼此沟通的方式之一</p><p>对于话术 却有着不同的意思</p><h1 id="我讲明白了吗"><a href="#我讲明白了吗" class="headerlink" title="我讲明白了吗"></a>我讲明白了吗</h1><p>要说印象深的 就平时听到的 <code>你听明白了吗</code> 责任在你</p><p>我觉得 换成 <code>我讲 清楚/明白 了吗</code> 这是责任在我的事情</p><blockquote><p><a href="http://blog.sina.com.cn/s/blog_8fa253560102wbj3.html">表达“我讲明白了吗？”还是“你听懂了吗？”</a></p></blockquote><h1 id="听你的"><a href="#听你的" class="headerlink" title="听你的"></a>听你的</h1><p>我记得什么时候 <code>随便</code> 一词火了</p><p>然后 这个常常挂在嘴边</p><p>要说印象深刻 那就在 恋爱的时候 或者关心对方的时候 </p><p>问出 <code>吃什么</code> <code>我们干什么</code></p><p>然后 对方回答 <code>随便</code> 那一刻起 <code>心痛啊</code></p><p>然后 换成 <code>听你的</code> 我觉得好多了</p><p>当然 这也是在哪里看到的</p><p>可是 我想了想 不是不应该给多方这个机会吗</p><h1 id="x2F-你开心我就开心"><a href="#x2F-你开心我就开心" class="headerlink" title="&#x2F;?? 你开心我就开心"></a>&#x2F;?? <code>你开心我就开心</code></h1><p>应该是这句吧 也想不起当时的意境了</p><p>这话从他那开始 也到那结束</p><p>是不是因为长大了</p><p>还是没人再这么说过</p>]]></content>
-    
-    
-    <summary type="html">关于聊天的感悟</summary>
-    
-    
-    
     
   </entry>
   
