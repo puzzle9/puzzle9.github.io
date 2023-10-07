@@ -6,7 +6,7 @@
   <link href="https://puzzle9.github.io/atom.xml" rel="self"/>
   
   <link href="https://puzzle9.github.io/"/>
-  <updated>2023-09-08T11:47:09.529Z</updated>
+  <updated>2023-10-07T06:56:12.863Z</updated>
   <id>https://puzzle9.github.io/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>飞机</title>
+    <link href="https://puzzle9.github.io/posts/b1beabae/"/>
+    <id>https://puzzle9.github.io/posts/b1beabae/</id>
+    <published>2023-10-07T06:54:27.000Z</published>
+    <updated>2023-10-07T06:56:12.863Z</updated>
+    
+    <content type="html"><![CDATA[<p>恩 飞机</p><p>坐飞机</p><p>你说</p><p>这个安全性 源于哪里</p><p>他是没有中间站的</p><p>只要走了 就是直达</p><p>每次 前期 这个心里啊 就感觉</p><p>emmmmmmmmm</p><p>忐忑</p><p>是因为这是富人的工具吗</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;恩 飞机&lt;/p&gt;
+&lt;p&gt;坐飞机&lt;/p&gt;
+&lt;p&gt;你说&lt;/p&gt;
+&lt;p&gt;这个安全性 源于哪里&lt;/p&gt;
+&lt;p&gt;他是没有中间站的&lt;/p&gt;
+&lt;p&gt;只要走了 就是直达&lt;/p&gt;
+&lt;p&gt;每次 前期 这个心里啊 就感觉&lt;/p&gt;
+&lt;p&gt;emmmmmmmmm&lt;/p&gt;
+&lt;p&gt;忐忑&lt;/p&gt;
+&lt;p&gt;是因</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>starbucks</title>
@@ -376,27 +405,6 @@
     <summary type="html">&lt;h1 id=&quot;缘起&quot;&gt;&lt;a href=&quot;#缘起&quot; class=&quot;headerlink&quot; title=&quot;缘起&quot;&gt;&lt;/a&gt;缘起&lt;/h1&gt;&lt;p&gt;搜索 一夫多妻 制时 看到了这个答案 便想着去追一波&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;张无忌的名字叫无忌，他也的确有横行无忌的本领和</summary>
-      
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Redmi Book Pro 2022 锐龙版 相关</title>
-    <link href="https://puzzle9.github.io/posts/8e1b1957/"/>
-    <id>https://puzzle9.github.io/posts/8e1b1957/</id>
-    <published>2022-07-07T04:18:52.000Z</published>
-    <updated>2022-08-17T04:20:54.364Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><blockquote><p>以 <a href="https://github.com/vrolife/modern_laptop">https://github.com/vrolife/modern_laptop</a> 为准<br>也可以自己编译内核 如 <a href="https://github.com/puzzle9/archlinux_build_kernel/">archlinux_build_kernel</a></p></blockquote><h1 id="内存问题"><a href="#内存问题" class="headerlink" title="内存问题"></a>内存问题</h1><blockquote><p>内存持续升高 按照运行进程查看是正常的</p></blockquote><ul><li><a href="https://unix.stackexchange.com/questions/637325/very-high-memory-usage-with-nothing-running">https://unix.stackexchange.com/questions/637325/very-high-memory-usage-with-nothing-running</a></li><li><a href="https://wiki.archlinux.org/title/Tmpfs">https://wiki.archlinux.org/title/Tmpfs</a></li></ul><p>以下 只适用于 <code>manjaro-gnome-21.3.2-220704-linux515</code></p><h1 id="键盘"><a href="#键盘" class="headerlink" title="键盘"></a>键盘</h1><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">sduo pacman -S make acpica dmidecode cpio</span><br><span class="line"></span><br><span class="line">git <span class="built_in">clone</span> https://github.com/puzzle9/modern_laptop_manjaro</span><br><span class="line"><span class="built_in">cd</span> modern_laptop</span><br><span class="line"></span><br><span class="line">sduo sh configure.sh</span><br><span class="line">sduo make install</span><br><span class="line">sduo make grub </span><br><span class="line">sduo make redmibook_wmi </span><br></pre></td></tr></table></figure><h1 id="wifi-x2F-蓝牙-lwfinger"><a href="#wifi-x2F-蓝牙-lwfinger" class="headerlink" title="wifi &#x2F; 蓝牙 lwfinger"></a>wifi &#x2F; 蓝牙 <code>lwfinger</code></h1><blockquote><p>可以考虑换成 <code>ax210 003</code> 就变得简单许多了</p></blockquote><blockquote><p>采用 <code>rtw8852be</code> 网卡时</p></blockquote><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sduo pacman -S linux515-headers</span><br></pre></td></tr></table></figure><h2 id="wifi"><a href="#wifi" class="headerlink" title="wifi"></a>wifi</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> git@github.com:lwfinger/rtw8852be.git</span><br><span class="line"><span class="built_in">cd</span> rtw8852be</span><br><span class="line">make -j8</span><br><span class="line">sduo make install</span><br></pre></td></tr></table></figure><h2 id="蓝牙-暂无效"><a href="#蓝牙-暂无效" class="headerlink" title="蓝牙 (暂无效)"></a>蓝牙 (暂无效)</h2><ul><li><a href="https://github.com/lwfinger/rtw8852be/issues/4">https://github.com/lwfinger/rtw8852be/issues/4</a><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> git@github.com:lwfinger/rtw89-BT.git</span><br><span class="line"><span class="built_in">cd</span> rtw89-BT</span><br><span class="line">make -j8</span><br><span class="line">sduo make install</span><br></pre></td></tr></table></figure></li></ul><h1 id="结束"><a href="#结束" class="headerlink" title="结束"></a>结束</h1><ul><li>重启一下试试 不出意外 完结散花</li></ul><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><ul><li><a href="https://www.reddit.com/r/linuxhardware/comments/vcpsql/2022_redmibook_pro_15_ryzen_keyboard_issue/">https://www.reddit.com/r/linuxhardware/comments/vcpsql/2022_redmibook_pro_15_ryzen_keyboard_issue/</a></li><li><a href="https://github.com/vrolife/modern_laptop">https://github.com/vrolife/modern_laptop</a></li></ul><h2 id="wifi-x2F-蓝牙-lwfinger-1"><a href="#wifi-x2F-蓝牙-lwfinger-1" class="headerlink" title="wifi &#x2F; 蓝牙 lwfinger"></a>wifi &#x2F; 蓝牙 <code>lwfinger</code></h2><ul><li><a href="https://github.com/lwfinger/rtw8852be">https://github.com/lwfinger/rtw8852be</a></li><li><a href="https://github.com/lwfinger/rtw89-BT">https://github.com/lwfinger/rtw89-BT</a></li></ul><h2 id="wifi-x2F-蓝牙-lwfinger-待尝试"><a href="#wifi-x2F-蓝牙-lwfinger-待尝试" class="headerlink" title="wifi &#x2F; 蓝牙 lwfinger (待尝试)"></a>wifi &#x2F; 蓝牙 <code>lwfinger</code> (待尝试)</h2><ul><li><a href="https://github.com/HRex39/rtl8852be">https://github.com/HRex39/rtl8852be</a></li><li><a href="https://github.com/HRex39/rtl8852be_bt">https://github.com/HRex39/rtl8852be_bt</a></li></ul><h2 id="内核直接修改键盘这部分问题-好吧-包没了"><a href="#内核直接修改键盘这部分问题-好吧-包没了" class="headerlink" title="内核直接修改键盘这部分问题 好吧 包没了"></a>内核直接修改键盘这部分问题 好吧 包没了</h2><ul><li><a href="https://aur.archlinux.org/cgit/aur.git/tree/?h=linux-zen-irq1-edge-low-shared">https://aur.archlinux.org/cgit/aur.git/tree/?h=linux-zen-irq1-edge-low-shared</a></li></ul>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;blockquote&gt;
-&lt;p&gt;以 &lt;a href=&quot;https://github.com/vrolife/modern_laptop&quot;&gt;http</summary>
       
     
     
