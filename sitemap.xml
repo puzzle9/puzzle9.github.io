@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://puzzle9.github.io/posts/54cc358c/</loc>
+    
+    <lastmod>2023-10-09</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://puzzle9.github.io/posts/d6910c5f/</loc>
     
     <lastmod>2023-10-09</lastmod>
@@ -77,15 +86,6 @@
     <loc>https://puzzle9.github.io/posts/2b44e58c/</loc>
     
     <lastmod>2023-02-06</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://puzzle9.github.io/posts/54cc358c/</loc>
-    
-    <lastmod>2022-12-09</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
