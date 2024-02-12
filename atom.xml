@@ -6,7 +6,7 @@
   <link href="https://puzzle9.github.io/atom.xml" rel="self"/>
   
   <link href="https://puzzle9.github.io/"/>
-  <updated>2023-10-11T16:56:30.414Z</updated>
+  <updated>2024-02-12T05:47:34.516Z</updated>
   <id>https://puzzle9.github.io/</id>
   
   <author>
@@ -15,6 +15,25 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>crypto</title>
+    <link href="https://puzzle9.github.io/posts/68282885/"/>
+    <id>https://puzzle9.github.io/posts/68282885/</id>
+    <published>2024-02-12T03:11:25.000Z</published>
+    <updated>2024-02-12T05:47:34.516Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>你也不想我们的秘密被别人晓得吧</p></blockquote><h1 id="密码学"><a href="#密码学" class="headerlink" title="密码学"></a><code>密码学</code></h1><ul><li><code>authenticity</code> 真实性</li><li><code>integrity</code> 完整性</li><li><code>non-repudiation</code> 不可否认性</li></ul><h2 id="Hash-哈希"><a href="#Hash-哈希" class="headerlink" title="Hash 哈希"></a><code>Hash</code> 哈希</h2><p>将任意一组数据转换为固定长度 确保无法逆向出原始消息</p><ul><li><code>md5</code></li><li><code>sha</code> <code>sha1</code> <code>sha256</code> <code>sha512</code> <code>sha3-512</code></li><li><code>bcrypt</code></li><li><code>argon2</code> <code>argon2d</code> <code>argon2i</code> <em>argon2id</em></li></ul><h2 id="Encryption-Decryption-加密、解密"><a href="#Encryption-Decryption-加密、解密" class="headerlink" title="Encryption Decryption 加密、解密"></a><code>Encryption Decryption</code> 加密、解密</h2><h3 id="对称加密"><a href="#对称加密" class="headerlink" title="对称加密"></a>对称加密</h3><p>加密与解密 <em>密钥相同</em></p><ul><li><code>AES</code> <code>AES-128-CBC</code> <code>AES-256-GCM</code> <code>AES-GCM-SIV</code></li><li><code>ChaCha</code> <em>XChaCha20-Poly1305</em> <code>ChaCha20-Poly1305</code></li></ul><h3 id="非对称加密"><a href="#非对称加密" class="headerlink" title="非对称加密"></a>非对称加密</h3><p>加密与解密 <em>密钥不同</em> 有一个 公钥 <code>public key</code> 和 私钥 <code>private key</code></p><ul><li><code>RSA</code> <code>RSA-2048</code> <code>RSA-4096</code></li><li><em>ECIES</em> 内部用的 <code>aes</code></li></ul><h2 id="Key-Exchange-密钥交换"><a href="#Key-Exchange-密钥交换" class="headerlink" title="Key Exchange 密钥交换"></a><code>Key Exchange</code> 密钥交换</h2><p>如何防止 <code>Eve</code> 晓得<code>Alice</code> 给 <code>Bob</code> 通过自己传递的消息 不过没有防止 <code>Mallory</code></p><ul><li><code>ECDH</code></li><li><code>ECIES</code></li></ul><h2 id="Signed-数字签名"><a href="#Signed-数字签名" class="headerlink" title="Signed 数字签名"></a><code>Signed</code> 数字签名</h2><ul><li><code>ECDSA</code></li><li><code>EdDSA</code></li></ul><h1 id="ECC-椭圆曲线密码学"><a href="#ECC-椭圆曲线密码学" class="headerlink" title="ECC 椭圆曲线密码学"></a><code>ECC</code> 椭圆曲线密码学</h1><p>应用有 <code>ECIES</code> <code>ECDH</code> <code>ECDSA</code> 等</p><p>这三类椭圆曲线之间可以相互转换</p><ul><li><em>ed25519</em> <code>ed448</code> 扭曲爱德华曲线</li><li><code>secp256k1</code> 维尔斯特拉斯</li><li><code>x25519</code> 蒙哥马利曲线</li></ul><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><ul><li><a href="https://thiscute.world/series/%E5%86%99%E7%BB%99%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98%E7%9A%84%E5%AE%9E%E7%94%A8%E5%AF%86%E7%A0%81%E5%AD%A6/">https://thiscute.world/series/写给开发人员的实用密码学/</a></li><li><a href="https://zh.wikipedia.org/wiki/%E6%84%9B%E9%BA%97%E7%B5%B2%E8%88%87%E9%AE%91%E4%BC%AF">https://zh.wikipedia.org/wiki/愛麗絲與鮑伯</a></li><li><a href="https://github.com/nakov/practical-cryptography-for-developers-book">https://github.com/nakov/practical-cryptography-for-developers-book</a></li><li><a href="https://www.zhihu.com/question/290541183/answer/2514279783">https://www.zhihu.com/question/290541183/answer/2514279783</a></li></ul>]]></content>
+    
+    
+    <summary type="html">那个密码学的事</summary>
+    
+    
+    
+    <category term="crypto" scheme="https://puzzle9.github.io/categories/crypto/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>port 的转发</title>
@@ -377,29 +396,6 @@
 &lt;p&gt;就容易怀疑自己&lt;/p&gt;
 &lt;p&gt;产生自我否定的念想&lt;/p&gt;
 &lt;p&gt;</summary>
-      
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>记账 努力code中</title>
-    <link href="https://puzzle9.github.io/posts/815dbb58/"/>
-    <id>https://puzzle9.github.io/posts/815dbb58/</id>
-    <published>2022-07-19T17:53:08.000Z</published>
-    <updated>2022-07-29T18:35:35.932Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="前记"><a href="#前记" class="headerlink" title="前记"></a>前记</h1><p>啊 时至今日</p><p>还依稀记得网易有钱关闭的那时候</p><p>我依稀记得那时候说要整个记账软件</p><p>到了昨天晚上</p><p>不容易的我终于决定新建文件夹了</p><p><a href="https://api.github.com/repos/puzzle9/Bookkeeping">https://api.github.com/repos/puzzle9/Bookkeeping</a> 访问后</p><p>发现仓库是 <code>2020-12-25</code> 创建的</p><p>不能鸽了呀</p><h1 id="新建文件夹"><a href="#新建文件夹" class="headerlink" title="新建文件夹"></a>新建文件夹</h1><p>回想起之前想到 <code>记账</code> 的点点滴滴</p><p>已经忘记的差不多了</p><p>想起来了那 <code>张大教主在学习师傅的太极剑后师傅说道</code></p><blockquote><p>不怕不怕 忘的真快</p></blockquote><p>那就重新搜索下</p><p>结果 发现了</p><p><a href="https://github.com/purezhi/MoneyKeeper">https://github.com/purezhi/MoneyKeeper</a></p><p>看了看设计的 <code>UI</code></p><p>真好看</p><p><a href="https://www.zcool.com.cn/work/ZMjExOTI4OTY=.html">https://www.zcool.com.cn/work/ZMjExOTI4OTY=.html</a></p><p>进去后发现 已经点过赞了 。。。</p><p>既然如此</p><p>拿我决定拿出我那<code>不堪入目</code>的 <code>css</code> 本领去仿制下</p><h1 id="后端思路"><a href="#后端思路" class="headerlink" title="后端思路"></a>后端思路</h1><h2 id="复式记账"><a href="#复式记账" class="headerlink" title="复式记账"></a>复式记账</h2><p>一定得是<code>复式</code></p><p>为啥对这个印象这么深刻</p><p>我迷迷糊糊记得 当时设计这个的时候</p><p>搜索到了</p><blockquote><p>有借必有贷 借贷必相等</p></blockquote><p>然后 查了半天的资料</p><p>发现 <code>借 和 贷</code> 按 <code>名词</code> 就可以理解</p><p>如果按照<code>动词</code> 那确实和我之前的 <code>流水帐</code> 不一样</p><p>啊西吧</p><p>者该死的<code>先入者观念</code></p><h1 id="todo"><a href="#todo" class="headerlink" title="todo"></a>todo</h1><p>我想起来了那个 <code>吐泡泡的鱼</code></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;前记&quot;&gt;&lt;a href=&quot;#前记&quot; class=&quot;headerlink&quot; title=&quot;前记&quot;&gt;&lt;/a&gt;前记&lt;/h1&gt;&lt;p&gt;啊 时至今日&lt;/p&gt;
-&lt;p&gt;还依稀记得网易有钱关闭的那时候&lt;/p&gt;
-&lt;p&gt;我依稀记得那时候说要整个记账软件&lt;/p&gt;
-&lt;p&gt;到了昨天晚上&lt;/p</summary>
       
     
     
