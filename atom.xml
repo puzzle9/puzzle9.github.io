@@ -6,7 +6,7 @@
   <link href="https://puzzle9.github.io/atom.xml" rel="self"/>
   
   <link href="https://puzzle9.github.io/"/>
-  <updated>2024-10-22T07:54:58.591Z</updated>
+  <updated>2024-11-19T13:45:35.647Z</updated>
   <id>https://puzzle9.github.io/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>vite 的 target 呀</title>
+    <link href="https://puzzle9.github.io/posts/97f3c987/"/>
+    <id>https://puzzle9.github.io/posts/97f3c987/</id>
+    <published>2024-11-19T13:41:38.000Z</published>
+    <updated>2024-11-19T13:45:35.647Z</updated>
+    
+    <content type="html"><![CDATA[<p>恩 浏览器兼容 换赛道了呢</p><p>好久没升级的我遇到了 <code>Object.hasOwn is not a function</code> 错误</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Mozilla/5.0 (Linux; Android 12; 2112123AG Build/SKQ1.220303.001; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/86.0.4240.99 XWEB/4263 MMWEBSDK/20220604 Mobile Safari/537.36 MMWEBID/2083 MicroMessenger/8.0.24.2167(0x28001843) WeChat/arm64 Weixin GPVersion/1 NetType/WIFI Language/zh_CN ABI/arm64  </span><br></pre></td></tr></table></figure><p>看了看应用的包 发现 <code>ky</code> 这个现代的有趣家伙</p><p>恩 搜了搜 发现优雅的解决方案</p><p><code>main.ts</code></p><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> * <span class="keyword">as</span> hasOwn <span class="keyword">from</span> <span class="string">&#x27;object.hasown&#x27;</span></span><br><span class="line"><span class="keyword">if</span> (!<span class="variable language_">window</span>.<span class="property">Object</span>.<span class="property">hasOwn</span>) &#123;</span><br><span class="line">  hasOwn.<span class="title function_">shim</span>()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>参考地址</p><ul><li><a href="https://github.com/sindresorhus/ky/issues/629">https://github.com/sindresorhus/ky/issues/629</a></li><li><a href="https://github.com/vitejs/vite/discussions/15794">https://github.com/vitejs/vite/discussions/15794</a></li><li><a href="https://ccny.ltd/views/blog/2022/%E4%BB%8E%20Object.hasOwn%20%E7%9C%8B%20@vitejs_plugin-legacy.html">https://ccny.ltd/views/blog/2022/%E4%BB%8E%20Object.hasOwn%20%E7%9C%8B%20@vitejs_plugin-legacy.html</a></li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;恩 浏览器兼容 换赛道了呢&lt;/p&gt;
+&lt;p&gt;好久没升级的我遇到了 &lt;code&gt;Object.hasOwn is not a function&lt;/code&gt; 错误&lt;/p&gt;
+&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td cl</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>UA 列表收集</title>
@@ -410,23 +432,6 @@
     <summary type="html">&lt;h1 id=&quot;疫情下的责任与义务&quot;&gt;&lt;a href=&quot;#疫情下的责任与义务&quot; class=&quot;headerlink&quot; title=&quot;疫情下的责任与义务&quot;&gt;&lt;/a&gt;疫情下的责任与义务&lt;/h1&gt;&lt;blockquote&gt;
 &lt;p&gt;人啊 都要为自己想做的事情奋斗一下 不然之后想起来 可能会</summary>
       
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>蓝牙鼠标</title>
-    <link href="https://puzzle9.github.io/posts/f03cd66b/"/>
-    <id>https://puzzle9.github.io/posts/f03cd66b/</id>
-    <published>2022-11-12T09:05:41.000Z</published>
-    <updated>2024-09-11T15:20:17.366Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><blockquote><p>切换双系统时不用重新配对蓝牙鼠标 当然 最简单的是买一个支持此功能的鼠标</p></blockquote><blockquote><p>正常情况下 重启电脑的次数不多</p></blockquote><h1 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h1><h2 id="在-linux-中连接鼠标"><a href="#在-linux-中连接鼠标" class="headerlink" title="在 linux 中连接鼠标"></a>在 <code>linux</code> 中连接鼠标</h2><p><img src="/posts/f03cd66b/linux_connect.png" alt="已经配置好了 所以和 `win` 显示的地址相同"></p><p>假设此处显示的地址为 <code>2B:B4:8D:52:7B:EC</code></p><h2 id="win-下连接鼠标"><a href="#win-下连接鼠标" class="headerlink" title="win 下连接鼠标"></a><code>win</code> 下连接鼠标</h2><h3 id="用设备管理器查看鼠标-MAC"><a href="#用设备管理器查看鼠标-MAC" class="headerlink" title="用设备管理器查看鼠标 MAC"></a>用设备管理器查看鼠标 <code>MAC</code></h3><p><img src="/posts/f03cd66b/win_connect.png"><br><code>c397369c4843</code> 就是鼠标的 <code>MAC</code> 地址</p><h3 id="下载-psexec"><a href="#下载-psexec" class="headerlink" title="下载 psexec"></a>下载 <code>psexec</code></h3><ul><li><a href="https://learn.microsoft.com/zh-cn/sysinternals/downloads/psexec">https://learn.microsoft.com/zh-cn/sysinternals/downloads/psexec</a></li></ul><blockquote><p>此处所需注册表权限 正常途径打开看不到蓝牙相关信息</p></blockquote><h3 id="使用-psexec-打开-regedit-注册表"><a href="#使用-psexec-打开-regedit-注册表" class="headerlink" title="使用 psexec 打开 regedit 注册表"></a>使用 <code>psexec</code> 打开 <code>regedit</code> 注册表</h3><p><img src="/posts/f03cd66b/psexec_regedit.png"></p><p>进入 <code>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\BTHPORT\Parameters\Keys</code></p><p>在目录中寻找鼠标 <code>MAC</code> 地址 <code>c397369c4843</code></p><p><img src="/posts/f03cd66b/psexec_regedit_mouse.png"></p><p>截图并记录其中的</p><ul><li><code>EDIV</code> &#x3D; <code>39160</code></li><li><code>ERand</code> &#x3D; <code>11022681155342728302</code></li><li><code>LTK</code> &#x3D; <code>cf 37 0f d5 d8 68 8d ce 89 44 8b 20 bf 0a 4b 71</code></li></ul><h2 id="重启到-linux"><a href="#重启到-linux" class="headerlink" title="重启到 linux"></a>重启到 <code>linux</code></h2><p>关闭蓝牙</p><p>进入 <code>/var/lib/bluetooth/$&#123;硬件蓝牙MAC&#125;</code> 目录</p><p>重命名 <code>$&#123;linux 鼠标MAC 2B:B4:8D:52:7B:EC&#125;</code> 为 <code>$&#123;win 鼠标MAC C3:97:36:9C:48:43&#125;</code></p><p>进入 <code>$&#123;win 鼠标MAC C3:97:36:9C:48:43&#125;</code> 目录</p><p>编辑 <code>info</code> 文件中的 <code>LongTermKey</code> 块</p><h3 id="源"><a href="#源" class="headerlink" title="源"></a>源</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[LongTermKey]</span><br><span class="line">Key=7B4C2B57D8BD9D814B0F8E77DA542378</span><br><span class="line">Authenticated=0</span><br><span class="line">EncSize=16</span><br><span class="line">EDiv=17867</span><br><span class="line">Rand=9467824016339893520</span><br></pre></td></tr></table></figure><h3 id="修改后"><a href="#修改后" class="headerlink" title="修改后"></a>修改后</h3><ul><li><code>Key</code> 对应 <code>LTK</code> 需 删除空格 转为 大写</li><li><code>EDiv</code> 对应 <code>EDIV</code> 10进制 位数可能不同</li><li><code>ERand</code> 对应 <code>Rand</code> 10进制 位数可能不同</li></ul><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[LongTermKey]</span><br><span class="line">Key=CF370FD5D8688DCE89448B20BF0A4B71</span><br><span class="line">Authenticated=0</span><br><span class="line">EncSize=16</span><br><span class="line">EDiv=39160</span><br><span class="line">Rand=11022681155342728302</span><br></pre></td></tr></table></figure><p>重启蓝牙服务 <code>systemctl restart bluetooth</code></p><h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><ul><li>不出意外的话 鼠标应该连接正常了</li><li>可以再重启到 <code>win</code> 试下</li></ul><h1 id="常见错误"><a href="#常见错误" class="headerlink" title="常见错误"></a>常见错误</h1><h2 id="psexec-找不到网络名"><a href="#psexec-找不到网络名" class="headerlink" title="psexec 找不到网络名"></a><code>psexec</code> 找不到网络名</h2><p><img src="/posts/f03cd66b/psexec_regedit_error_admin$.png"></p><h3 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h3><p>因为关闭了 <code>ADMIN$</code> 共享导致</p><p>可以进入 <code>计算机管理</code> <code>共享</code> 中查看 是否有 <code>ADMIN$</code> 共享<br><img src="/posts/f03cd66b/share_admin$.png"></p><h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><p>以 <code>管理员</code> 运行 <code>regedit</code></p><p>进入 <code>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\lanmanserver\parameters</code><br>新增或修改 <code>AutoShareWks</code> 和 <code>AutoShareServer</code> 格式为 <code>REG_DWORD</code> 赋值 <code>1</code></p><p>进入 <code>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa</code><br>新增或修改 <code>restrictanonymous</code> 格式为 <code>REG_DWORD</code> 赋值 <code>1</code></p><p>重启电脑</p><p><code>psexec</code>运行完成后可以考虑反方向操作再给关闭 <code>ADMIN$</code> 共享</p><h1 id="参考地址"><a href="#参考地址" class="headerlink" title="参考地址"></a>参考地址</h1><ul><li><a href="https://zhuanlan.zhihu.com/p/466962255">https://zhuanlan.zhihu.com/p/466962255</a></li><li><a href="https://blog.csdn.net/weixin_34235457/article/details/91585503">https://blog.csdn.net/weixin_34235457/article/details/91585503</a></li><li><a href="https://wiki.archlinux.org/title/Bluetooth#Dual_boot_pairing">https://wiki.archlinux.org/title/Bluetooth#Dual_boot_pairing</a></li></ul>]]></content>
-    
-    
-    <summary type="html">win linux 共用同一蓝牙鼠标</summary>
     
     
     
