@@ -1,0 +1,283 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><meta property="og:description" content="puzzle9 的博客,还在思考要怎么填充内容."><meta property="og:type" content="website"><meta name="description" content="puzzle9 的博客,还在思考要怎么填充内容."><meta name="keyword" content="puzzle9,博客写点啥"><link rel="shortcut icon" href="/img/favicon.ico"><title>Debian9-x64-Install-Vhost - puzzle9 blog</title><link rel="stylesheet" href="/css/aircloud.css"><link rel="stylesheet" href="/css/gitment.css"><link href="//cdn.bootcdn.net/ajax/libs/bootstrap-icons/1.9.1/font/bootstrap-icons.min.css" rel="stylesheet" type="text/css"><script></script><meta name="google-site-verification" content="3e4j7L_541lS0rJFqZrKpELNNYbwf2-Ed57dT7_dIJA"><script async src="https://www.googletagmanager.com/gtag/js?id=G-BKQDR65NCT"></script><script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-BKQDR65NCT")</script><meta name="msvalidate.01" content="F41A5465665E7579D1952E516D03A8A7"><meta name="baidu-site-verification" content="code-LrrIDw9dme"><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="puzzle9 blog" type="application/atom+xml"></head><body><div class="site-nav-toggle" id="site-nav-toggle"><button><span class="btn-bar"></span> <span class="btn-bar"></span> <span class="btn-bar"></span></button></div><div class="index-about"></div><div class="index-container"><div class="index-left"><div class="nav" id="nav"><div class="avatar-name"><div class="avatar"><img src="/img/avatar.jpg"></div><div class="name"><a href="/"><i>puzzle9</i></a></div></div><div class="contents" id="nav-content"><ul><li><a href="/"><i class="bi bi-house"></i> <span>主页</span></a></li><li><a href="/tags"><i class="bi bi-journals"></i> <span>标签</span></a></li><li><a href="/archives"><i class="bi bi-journal-bookmark"></i> <span>存档</span></a></li><li><a href="/about"><i class="bi bi-person"></i> <span>关于</span></a></li><li><a href="/project_plan"><i class="bi bi-file"></i> <span>Project Plan</span></a></li><li><a href="/love_to_do"><i class="bi bi-list-task"></i> <span>Love To Do</span></a></li><li><a id="search"><i class="bi bi-search"></i> <span>搜索</span></a></li></ul></div><div id="toc" class="toc-article"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85%E8%84%9A%E6%9C%AC"><span class="toc-text">一键安装脚本</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#ssh"><span class="toc-text">ssh</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Get-Ready"><span class="toc-text">Get Ready</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#nginx"><span class="toc-text">nginx</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#install"><span class="toc-text">install</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#php7-2"><span class="toc-text">php7.2</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#freetype"><span class="toc-text">freetype</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#install-1"><span class="toc-text">install</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#etc"><span class="toc-text">etc</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#php-ini"><span class="toc-text">php.ini</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#php-fpm-conf"><span class="toc-text">php-fpm.conf</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#plug"><span class="toc-text">plug</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#mongodb"><span class="toc-text">mongodb</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#composer"><span class="toc-text">composer</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#etc-profile"><span class="toc-text">&#x2F;etc&#x2F;profile</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#mariadb"><span class="toc-text">mariadb</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#install-2"><span class="toc-text">install</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#my-cnf"><span class="toc-text">my.cnf</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#add-user"><span class="toc-text">add user</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#install-data"><span class="toc-text">install data</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#up-user"><span class="toc-text">up user</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#del-more"><span class="toc-text">del more</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ln-s"><span class="toc-text">ln -s</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#mongodb-1"><span class="toc-text">mongodb</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#install-3"><span class="toc-text">install</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#conf"><span class="toc-text">conf</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#node"><span class="toc-text">node</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#install-4"><span class="toc-text">install</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#etc-profile-1"><span class="toc-text">&#x2F;etc&#x2F;profile</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#python3"><span class="toc-text">python3</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#install-5"><span class="toc-text">install</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#reids"><span class="toc-text">reids</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#install-6"><span class="toc-text">install</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#conf-1"><span class="toc-text">conf</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#question"><span class="toc-text">question</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#git"><span class="toc-text">git</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#install-7"><span class="toc-text">install</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#end"><span class="toc-text">end</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#vhost"><span class="toc-text">vhost</span></a></li></ol></li></ol></div></div><div class="search-field" id="search-field"><div class="search-bg" id="search-bg"></div><div class="search-container"><div class="search-input"><span id="esc-search"><i class="bi bi-backspace"></i></span> <input id="search-input"> <span id="begin-search">搜索</span></div><div class="search-result-container" id="search-result-container"></div></div></div><div class="index-about-mobile"><i>I exist because you need me.</i></div></div><div class="index-middle"><div class="post-container"><div class="post-title">Debian9-x64-Install-Vhost</div><div class="post-meta"><span class="attr">发布于：<span>2018-08-05 00:03:05</span></span> <span class="attr">标签：/ <a class="tag" href="/tags/#php" title="php">php</a> <span>/</span> <a class="tag" href="/tags/#nginx" title="nginx">nginx</a> <span>/</span> <a class="tag" href="/tags/#mariadb" title="mariadb">mariadb</a> <span>/</span> <a class="tag" href="/tags/#mongodb" title="mongodb">mongodb</a> <span>/</span> <a class="tag" href="/tags/#node" title="node">node</a> <span>/</span> <a class="tag" href="/tags/#python3" title="python3">python3</a> <span>/</span> <a class="tag" href="/tags/#redis" title="redis">redis</a> <span>/</span> <a class="tag" href="/tags/#git" title="git">git</a> <span>/</span> </span><span class="attr">访问：<span id="busuanzi_value_page_pv"></span></span></div><div class="post-content no-indent"><h1 id="一键安装脚本"><a href="#一键安装脚本" class="headerlink" title="一键安装脚本"></a>一键安装脚本</h1><p><a target="_blank" rel="noopener" href="https://oneinstack.com/">https://oneinstack.com/</a><br><a target="_blank" rel="noopener" href="https://lnmp.org/">https://lnmp.org/</a></p><h1 id="ssh"><a href="#ssh" class="headerlink" title="ssh"></a>ssh</h1><pre><code>apt-get install sshpass
+sshpass -p &#39;password&#39; ssh -i &#39;.pem&#39; username@ip
+</code></pre><h1 id="Get-Ready"><a href="#Get-Ready" class="headerlink" title="Get Ready"></a>Get Ready</h1><pre><code>useradd www
+usermod -L www
+
+apt-get update
+apt-get upgrade
+apt-get purge apache nginx mysql
+apt-get install g++ make libpcre3 perl psmisc curl wget
+
+mkdir -p /vhost/tmp/
+mkdir -p /vhost/phpx/
+mkdir -p /vhost/down
+cd /vhost/down
+</code></pre><h1 id="nginx"><a href="#nginx" class="headerlink" title="nginx"></a><a target="_blank" rel="noopener" href="http://nginx.org/">nginx</a></h1><h2 id="install"><a href="#install" class="headerlink" title="install"></a>install</h2><pre><code>curl -O http://zlib.net/zlib-1.2.11.tar.gz
+curl -O https://ftp.pcre.org/pub/pcre/pcre-8.41.tar.gz
+curl -O https://www.openssl.org/source/openssl-1.1.0g.tar.gz
+curl -O http://nginx.org/download/nginx-1.14.0.tar.gz
+
+tar -zxf zlib-1.2.11.tar.gz
+tar -zxf pcre-8.41.tar.gz
+tar -zxf openssl-1.1.0g.tar.gz
+tar -zxf nginx-1.14.0.tar.gz
+
+cd nginx-1.14.0
+
+./configure --prefix=/vhost/nginx --with-pcre=/vhost/down/pcre-8.41 --with-zlib=/vhost/down/zlib-1.2.11 --with-openssl=/vhost/down/openssl-1.1.0g --user=www --group=www --with-http_stub_status_module --with-http_ssl_module --with-http_v2_module --with-http_gzip_static_module --with-ipv6 --with-http_sub_module --with-http_flv_module --with-http_addition_module --with-http_realip_module --with-http_mp4_module 
+
+make&amp;&amp;make install
+
+rm -rf /usr/local/bin/nginx
+
+ln -s /vhost/nginx/sbin/nginx /usr/local/bin/
+</code></pre><h1 id="php7-2"><a href="#php7-2" class="headerlink" title="php7.2"></a><a target="_blank" rel="noopener" href="http://php.net/">php7.2</a></h1><h2 id="freetype"><a href="#freetype" class="headerlink" title="freetype"></a>freetype</h2><pre><code>wget https://sourceforge.net/projects/freetype/files/freetype2/2.9/freetype-2.9.tar.gz/download -O freetype-2.9.tar.gz
+tar zxf freetype-2.9.tar.gz
+cd freetype-2.9
+./configure --prefix=/usr/local/freetype2
+make&amp;&amp;make install
+</code></pre><h2 id="install-1"><a href="#install-1" class="headerlink" title="install"></a>install</h2><pre><code>apt-get install libxml2 libxml2-dev libcurl4-openssl-dev pkg-config libssl-dev libjpeg-dev libfreetype6-dev libmcrypt-dev libxslt1-dev libicu-dev
+
+curl -O http://php.net/distributions/php-7.2.8.tar.xz
+
+xz -dk php-7.2.8.tar.xz
+tar xf php-7.2.8.tar
+
+cd php-7.2.8
+
+./configure --prefix=/vhost/phpx/php7.2.8 --with-config-file-path=/vhost/phpx/php7.2.8/etc --enable-fpm --with-fpm-user=www --with-fpm-group=www --enable-mysqlnd --with-mysqli=mysqlnd --with-pdo-mysql=mysqlnd --with-iconv-dir --with-freetype-dir=/usr/local/freetype2 --with-jpeg-dir --with-png-dir --with-zlib --with-libxml-dir --enable-xml --enable-rpath --enable-bcmath --enable-shmop --enable-sysvsem --enable-inline-optimization --with-curl --enable-mbregex --enable-mbstring --enable-intl --enable-pcntl --enable-ftp --with-gd --with-openssl --with-mhash  --enable-sockets --with-xmlrpc --enable-zip --enable-soap --with-gettext --enable-fileinfo --enable-opcache --enable-exif 
+
+make&amp;&amp;make install
+
+rm /usr/local/bin/php
+
+ln -s /vhost/phpx/php7.2.8/bin/php /usr/local/bin/
+
+mkdir -p /vhost/phpx/opcachecache /vhost/phpx/session /vhost/phpx/uploadtmp
+chmod 777 -R /vhost/phpx/opcachecache /vhost/phpx/session /vhost/phpx/uploadtmp
+</code></pre><h2 id="etc"><a href="#etc" class="headerlink" title="etc"></a>etc</h2><h3 id="php-ini"><a href="#php-ini" class="headerlink" title="php.ini"></a>php.ini</h3><pre><code>sed -i &quot;s#^post_max_size = 8M#post_max_size = 128M#&quot; php.ini-production
+sed -i &quot;s#^upload_max_filesize = 2M#upload_max_filesize = 128M#&quot; php.ini-production
+
+echo &#39;
+session.save_path = &#39;/vhost/phpx/session&#39;
+opcache.file_cache = &#39;/vhost/phpx/opcachecache&#39;
+upload_tmp_dir = &#39;/vhost/phpx/uploadtmp&#39;
+&#39; &gt;&gt; php.ini-production
+
+cp php.ini-production /vhost/phpx/php7.2.8/etc/php.ini
+</code></pre><h3 id="php-fpm-conf"><a href="#php-fpm-conf" class="headerlink" title="php-fpm.conf"></a>php-fpm.conf</h3><pre><code>vi /vhost/phpx/php7.2.8/etc/php-fpm.conf
+
+[www]
+
+user = www
+group = www
+
+listen = /dev/shm/php72.sock
+
+pm = dynamic
+
+pm.max_children = 5
+
+pm.start_servers = 3
+
+pm.min_spare_servers = 3
+
+pm.max_spare_servers = 5
+</code></pre><h2 id="plug"><a href="#plug" class="headerlink" title="plug"></a>plug</h2><h3 id="mongodb"><a href="#mongodb" class="headerlink" title="mongodb"></a>mongodb</h3><pre><code>apt-get install autoconf m4 automake libtool 
+
+curl -O https://pecl.php.net/get/mongodb-1.5.2.tgz
+tar zxf mongodb-1.5.2.tgz
+cd mongodb-1.5.2
+/vhost/phpx/php7.2.8/bin/phpize
+./configure --with-php-config=/vhost/phpx/php7.2.8/bin/php-config 
+make&amp;&amp;make install
+
+sed -i &#39;extension=mongodb.so&#39; /vhost/phpx/php7.2.8/etc/php.ini
+</code></pre><h3 id="composer"><a href="#composer" class="headerlink" title="composer"></a>composer</h3><pre><code>curl -sS https://getcomposer.org/installer | php
+mv composer.phar /usr/local/bin/composer
+
+chmod 777 /usr/local/bin/composer
+</code></pre><h4 id="etc-profile"><a href="#etc-profile" class="headerlink" title="&#x2F;etc&#x2F;profile"></a>&#x2F;etc&#x2F;profile</h4><pre><code>vi /etc/profile
+
+#composer
+export PATH=&quot;$PATH:&#123;user root&#125;/.config/composer/vendor/bin/&quot; 
+
+or
+
+echo &#39;
+#composer
+export PATH=&quot;$PATH:&#123;user root&#125;/.config/composer/vendor/bin/&quot; 
+&#39; &gt;&gt; /etc/profile
+</code></pre><h1 id="mariadb"><a href="#mariadb" class="headerlink" title="mariadb"></a><a target="_blank" rel="noopener" href="https://www.mariadb.org/">mariadb</a></h1><h2 id="install-2"><a href="#install-2" class="headerlink" title="install"></a>install</h2><pre><code>mkdir /vhost/mysqlData
+rm -rf /usr/local/mysql /etc/my.cnf /etc/init.d/mysql
+
+apt-get install libaio-dev
+
+wget http://ftp.cc.uoc.gr/mirrors/mariadb//mariadb-10.3.8/bintar-linux-x86_64/mariadb-10.3.8-linux-x86_64.tar.gz
+
+tar -zxf mariadb-10.3.8-linux-x86_64.tar.gz
+
+mv mariadb-10.2.13-linux-x86_64 /usr/local/mysql
+</code></pre><h2 id="my-cnf"><a href="#my-cnf" class="headerlink" title="my.cnf"></a>my.cnf</h2><pre><code>memTotal=`free -m | grep Mem | awk &#39;&#123;print  $2&#125;&#39;`
+
+# 选取合适的配置文件
+if [[ $&#123;memTotal&#125; -lt 64 ]]; then
+    # 小于64m
+    mysqlCnf=&#39;my-small&#39;
+elif [[ $&#123;memTotal&#125; -ge 64 &amp;&amp; $&#123;memTotal&#125; -lt 128 ]]; then
+    # 64m 到 128m
+    mysqlCnf=&#39;my-medium&#39;
+elif [[ $&#123;memTotal&#125; -ge 128 &amp;&amp; $&#123;memTotal&#125; -lt 512 ]]; then
+    # 128m 到 512m
+    mysqlCnf=&#39;my-large&#39;
+elif [[ $&#123;memTotal&#125; -ge 512 &amp;&amp; $&#123;memTotal&#125; -lt 4096 ]]; then
+    # 512m 到 4096m
+    mysqlCnf=&#39;my-huge&#39;
+elif [[ $&#123;memTotal&#125; -ge 4096 ]]; then
+    # 大于 4096m
+    mysqlCnf=&#39;my-innodb-heavy-4G&#39;
+fi
+
+cp /usr/local/mysql/support-files/$&#123;mysqlCnf&#125;.cnf /etc/my.cnf
+</code></pre><h2 id="add-user"><a href="#add-user" class="headerlink" title="add user"></a>add user</h2><pre><code>groupadd mysql
+useradd -g mysql mysql 
+chown root:mysql -Rf  /usr/local/mysql
+chmod +x -Rf /usr/local/mysql
+chown mysql:mysql /etc/my.cnf
+</code></pre><h2 id="install-data"><a href="#install-data" class="headerlink" title="install data"></a>install data</h2><pre><code>/usr/local/mysql/scripts/mysql_install_db --user=mysql --defaults-file=/etc/my.cnf --basedir=/usr/local/mysql/ --datadir=/vhost/mysqlData --force
+
+chgrp -R mysql /vhost/mysqlData
+
+cp /usr/local/mysql/support-files/mysql.server /etc/init.d/mysql
+sed -i &quot;s#^datadir=.*#datadir=&#39;/vhost/mysqlData&#39;#&quot; /etc/init.d/mysql
+chmod 777 /etc/init.d/mysql
+</code></pre><h2 id="up-user"><a href="#up-user" class="headerlink" title="up user"></a>up user</h2><pre><code>systemctl enable mysql.service
+systemctl start mysql.service
+
+/usr/local/mysql/bin/mysqladmin -u root password &#39;root&#39;
+/usr/local/mysql/bin/mysql -uroot -proot -e &quot;drop database test;use mysql;delete from db;delete from user where user = &#39;&#39;;delete from user where password = &#39;&#39;;flush privileges;&quot;;
+
+systemctl stop mysql.service
+</code></pre><h2 id="del-more"><a href="#del-more" class="headerlink" title="del more"></a>del more</h2><pre><code>mkdir /usr/local/mysqlSmail
+mv /usr/local/mysql/bin /usr/local/mysqlSmail
+mv /usr/local/mysql/share /usr/local/mysqlSmail
+rm -rf /usr/local/mysql/
+mv /usr/local/mysqlSmail /usr/local/mysql/
+</code></pre><h2 id="ln-s"><a href="#ln-s" class="headerlink" title="ln -s"></a>ln -s</h2><pre><code>rm -f /usr/bin/mysql /usr/bin/mysqldump
+ln -s /usr/local/mysql/bin/mysql /usr/bin/mysql
+ln -s /usr/local/mysql/bin/mysqldump /usr/bin/mysqldump
+</code></pre><h1 id="mongodb-1"><a href="#mongodb-1" class="headerlink" title="mongodb"></a><a target="_blank" rel="noopener" href="https://www.mongodb.org/">mongodb</a></h1><h2 id="install-3"><a href="#install-3" class="headerlink" title="install"></a>install</h2><pre><code>rm -rf /usr/local/mongodb
+mkdir -p /vhost/mongodb/data
+chmod 777 /vhost/mongodb/data
+
+
+#curl -O https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-debian92-4.0.0.tgz
+curl -O https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-4.0.0.tgz
+tar -zxf mongodb-linux-x86_64-4.0.0.tgz  -C /usr/local/
+
+mv /usr/local/mongodb-linux-x86_64-4.0.0 /usr/local/mongodb
+
+rm -f /usr/local/bin/mongo /usr/local/bin/mongod
+
+ln -s /usr/local/mongodb/bin/mongo /usr/local/bin/mongo
+ln -s /usr/local/mongodb/bin/mongod /usr/local/bin/mongod
+</code></pre><h2 id="conf"><a href="#conf" class="headerlink" title="conf"></a>conf</h2><pre><code>vi /usr/local/mongodb/mongodb.conf
+
+dbpath=/vhost/mongodb/data
+logpath=/vhost/mongodb/mongodb.log
+fork=true
+logappend=true
+auth=true
+port=27017
+</code></pre><h1 id="node"><a href="#node" class="headerlink" title="node"></a><a target="_blank" rel="noopener" href="https://nodejs.org/">node</a></h1><h2 id="install-4"><a href="#install-4" class="headerlink" title="install"></a>install</h2><pre><code>rm -rf /usr/local/node
+
+curl -O https://nodejs.org/dist/v8.11.3/node-v8.11.3-linux-x64.tar.xz
+
+xz -dk node-v8.11.3-linux-x64.tar.xz
+tar xf node-v8.11.3-linux-x64.tar
+
+mv node-v8.11.3-linux-x64 /usr/local/node
+
+chmod 777 -R /usr/local/node
+</code></pre><h2 id="etc-profile-1"><a href="#etc-profile-1" class="headerlink" title="&#x2F;etc&#x2F;profile"></a>&#x2F;etc&#x2F;profile</h2><pre><code>vi /etc/profile
+
+#node
+export PATH=&quot;$PATH:/usr/local/node/bin/&quot;
+
+or
+
+echo &#39;
+#node
+export PATH=&quot;$PATH:/usr/local/node/bin/&quot;
+&#39; &gt;&gt; /etc/profile
+</code></pre><h1 id="python3"><a href="#python3" class="headerlink" title="python3"></a><a target="_blank" rel="noopener" href="https://www.python.org/">python3</a></h1><h2 id="install-5"><a href="#install-5" class="headerlink" title="install"></a>install</h2><pre><code>wget https://www.python.org/ftp/python/3.7.0/Python-3.7.0.tar.xz
+
+xz -dk Python-3.7.0.tar.xz
+tar xf Python-3.7.0.tar.xz
+
+cd Python-3.7.0
+
+mkdir -p /usr/local/py3
+
+./configure --prefix=/usr/local/py3
+
+make&amp;&amp;make install
+
+rm -rf /usr/bin/py3*
+
+ln -s /usr/local/py3/bin/python3 /usr/bin/py3
+ln -s /usr/local/py3/bin/pip3 /usr/bin/pip3
+</code></pre><h1 id="reids"><a href="#reids" class="headerlink" title="reids"></a><a target="_blank" rel="noopener" href="https://redis.io/">reids</a></h1><h2 id="install-6"><a href="#install-6" class="headerlink" title="install"></a>install</h2><pre><code>rm -rf /usr/local/redis
+
+wget http://download.redis.io/releases/redis-4.0.11.tar.gz
+tar xzf redis-4.0.11.tar.gz
+mv redis-4.0.11 redis
+cd redis
+make
+
+rm -f /usr/local/bin/redis*
+
+mkdir -p /usr/local/redis/bin/
+
+mv src/redis-server /usr/local/redis/bin/
+mv src/redis-cli /usr/local/redis/bin/
+
+ln -s /usr/local/redis/bin/redis-server /usr/local/bin/
+ln -s /usr/local/redis/bin/redis-cli /usr/local/bin/
+</code></pre><h2 id="conf-1"><a href="#conf-1" class="headerlink" title="conf"></a>conf</h2><pre><code>mkdir /vhost/redis
+
+sed -i &quot;s#^dir ./#dir /vhost/redis/#&quot; /vhost/down/redis/redis.conf
+sed -i &quot;s#^daemonize no/#daemonize yes#&quot; /vhost/down/redis/redis.conf
+sed -i &#39;requirepass root&#39; /vhost/down/redis/redis.conf
+
+rm -rf /usr/local/redis/redis.conf
+cp /vhost/down/redis/redis.conf /usr/local/redis/redis.conf
+</code></pre><h2 id="question"><a href="#question" class="headerlink" title="question"></a>question</h2><blockquote><p>2018年08月06日12:21:07<br><del>echo ‘net.core.somaxconn &#x3D; 511’ &gt; &#x2F;etc&#x2F;sysctl.conf</del><br><del>echo ‘vm.overcommit_memory &#x3D; 1’ &gt; &#x2F;etc&#x2F;sysctl.conf</del></p></blockquote><pre><code>echo &#39;net.core.somaxconn = 511&#39; &gt;&gt; /etc/sysctl.conf
+echo &#39;vm.overcommit_memory = 1&#39; &gt;&gt; /etc/sysctl.conf
+
+echo &#39;
+if test -f /sys/kernel/mm/transparent_hugepage/enabled; then
+   echo never &gt; /sys/kernel/mm/transparent_hugepage/enabled
+fi
+&#39; &gt;&gt; /etc/rc.local
+
+sysctl -p
+</code></pre><h1 id="git"><a href="#git" class="headerlink" title="git"></a><a target="_blank" rel="noopener" href="https://git-scm.com/">git</a></h1><h2 id="install-7"><a href="#install-7" class="headerlink" title="install"></a>install</h2><pre><code>apt-get install libpcre3 libpcre3-dev tk perl cpio gettext
+
+curl -O https://www.kernel.org/pub/software/scm/git/git-2.18.0.tar.xz
+
+xz -dk git-2.18.0.tar.xz
+tar xf git-2.18.0.tar
+
+cd git-2.18.0
+
+./configure --prefix=/usr/local/git-2.18.0
+
+make&amp;&amp;make install
+
+rm /usr/local/bin/git
+ln -s /usr/local/git-2.18.0/bin/git /usr/local/bin
+</code></pre><h1 id="end"><a href="#end" class="headerlink" title="end"></a>end</h1><h2 id="vhost"><a href="#vhost" class="headerlink" title="vhost"></a>vhost</h2><pre><code>vi /vhost/vhost.sh
+</code></pre><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">!/bin/bash</span></span><br><span class="line">sudo echo</span><br><span class="line"></span><br><span class="line">fristPage() &#123;</span><br><span class="line">    echo -e &#x27;</span><br><span class="line">    ==================================================================</span><br><span class="line"></span><br><span class="line">                        start || restart || stop</span><br><span class="line"></span><br><span class="line">    ==================================================================&#x27;</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">php</span></span><br><span class="line">phpStart() &#123;</span><br><span class="line">    echo &#x27;start php&#x27;</span><br><span class="line">    sudo /vhost/phpx/php7.2.8/sbin/php-fpm</span><br><span class="line">    sudo chmod 777 /dev/shm/php72.sock</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">phpStop() &#123;</span><br><span class="line">    echo &#x27;stop php&#x27;</span><br><span class="line">    sudo killall php-fpm</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">phpRestart() &#123;</span><br><span class="line">    echo &#x27;restart php&#x27;</span><br><span class="line">    phpStop</span><br><span class="line">    phpStart</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">nginx</span></span><br><span class="line">nginxStart() &#123;</span><br><span class="line">    echo &#x27;start nginx&#x27;</span><br><span class="line">    sudo nginx</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">nginxStop() &#123;</span><br><span class="line">    echo &#x27;stop nginx&#x27;</span><br><span class="line">    sudo nginx -s stop</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">nginxRestart() &#123;</span><br><span class="line">    echo &#x27;restart nginx&#x27;</span><br><span class="line">    sudo nginx -s reload</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">mysql</span></span><br><span class="line">mysqlStart() &#123;</span><br><span class="line">    echo &#x27;start mysql&#x27;</span><br><span class="line">    sudo systemctl start mysql.service</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">mysqlStop() &#123;</span><br><span class="line">    echo &#x27;stop mysql&#x27;</span><br><span class="line">    sudo systemctl stop mysql.service</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">mysqlRestart() &#123;</span><br><span class="line">    echo &#x27;restart mysql&#x27;</span><br><span class="line">    sudo systemctl restart mysql.service</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">mongo</span></span><br><span class="line">mongoStart() &#123;</span><br><span class="line">    echo &#x27;start mongo&#x27;</span><br><span class="line">    mongod -f /usr/local/mongodb/mongodb.conf</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">mongoStop() &#123;</span><br><span class="line">    echo &#x27;stop mongo&#x27;</span><br><span class="line">    mongod  --shutdown -f /usr/local/mongodb/mongodb.conf</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">mongoRestart() &#123;</span><br><span class="line">    echo &#x27;restart mongo&#x27;</span><br><span class="line">    mongoStop</span><br><span class="line">    mongoStart</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">redis</span></span><br><span class="line">redisStart() &#123;</span><br><span class="line">    echo &#x27;start redis&#x27;</span><br><span class="line">    redis-server /usr/local/redis/redis.conf</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">redisStop() &#123;</span><br><span class="line">    echo &#x27;stop redis&#x27;</span><br><span class="line">    redis-cli -a root shutdown</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">redisRestart() &#123;</span><br><span class="line">    echo &#x27;restart redis&#x27;</span><br><span class="line">    redisStop</span><br><span class="line">    redisStart</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">vhost</span></span><br><span class="line">vhostStart() &#123;</span><br><span class="line">    echo &#x27;start&#x27;</span><br><span class="line">    phpStart</span><br><span class="line">    nginxStart</span><br><span class="line">    mysqlStart</span><br><span class="line">    mongoStart</span><br><span class="line">    redisStart</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">vhostStop() &#123;</span><br><span class="line">    echo &#x27;stop&#x27;</span><br><span class="line">    phpStop</span><br><span class="line">    nginxStop</span><br><span class="line">    mysqlStop</span><br><span class="line">    mongoStop</span><br><span class="line">    redisStop</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">if [[ $1 ]]; then</span><br><span class="line"></span><br><span class="line">    if [[ $2 ]]; then</span><br><span class="line">        $&#123;2&#125;Restart</span><br><span class="line">    fi</span><br><span class="line"></span><br><span class="line">    if [[ $1 == &#x27;start&#x27; ]]; then</span><br><span class="line">        vhostStart</span><br><span class="line">    elif [[ $1 == &#x27;stop&#x27; ]]; then</span><br><span class="line">        vhostStop</span><br><span class="line">    fi</span><br><span class="line">else</span><br><span class="line">    fristPage</span><br><span class="line">fi</span><br></pre></td></tr></table></figure><pre><code>chmod 777 /vhost/vhost.sh
+ln -s /vhost/vhost.sh /usr/local/bin/vhost
+</code></pre><br><div id="comment-container"></div><div id="disqus_thread"></div><div id="lv-container"></div><div class="giscus"></div></div></div></div></div><footer class="footer"><ul class="list-inline text-center"></ul><p><span>/</span> <span><a target="_blank" rel="noopener" href="https://stam1na.gitee.io">Stamina</a></span> <span>/</span></p><p><span>&copy; 2018-2025 <a href="/">puzzle9</a> </span>Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> Theme <a target="_blank" rel="noopener" href="https://github.com/puzzle9/hexo-theme-aircloud-puzzle">AirCloud-puzzle9</a></p><div><span id="busuanzi_container_site_pv"><span id="busuanzi_value_site_pv"></span> PV </span><span id="busuanzi_container_site_uv"><span id="busuanzi_value_site_uv"></span> UV</span></div></footer></body><script>window.hexo_search_path="search.json",window.hexo_root="/",window.isPost=!0</script><script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script><script src="/js/index.js"></script><script async src="https://busuanzi.icodeq.com/busuanzi.pure.mini.js"></script><script src="https://giscus.app/client.js" data-repo="puzzle9/puzzle9.github.io" data-repo-id="MDEwOlJlcG9zaXRvcnkxMjI2MjM4NTQ=" data-category="giscus" data-category-id="DIC_kwDOB08Xbs4CRH-Y" data-mapping="pathname" data-strict="0" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="zh-CN" data-loading="lazy" crossorigin="anonymous" async></script></html>
