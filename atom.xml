@@ -6,7 +6,7 @@
   <link href="https://puzzle9.github.io/atom.xml" rel="self"/>
   
   <link href="https://puzzle9.github.io/"/>
-  <updated>2025-06-24T14:06:55.588Z</updated>
+  <updated>2025-06-25T08:29:38.771Z</updated>
   <id>https://puzzle9.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>租房啊</title>
+    <link href="https://puzzle9.github.io/posts/abbe4be6/"/>
+    <id>https://puzzle9.github.io/posts/abbe4be6/</id>
+    <published>2025-06-25T08:16:52.000Z</published>
+    <updated>2025-06-25T08:29:38.771Z</updated>
+    
+    <content type="html"><![CDATA[<p>啊 租房</p><p>有了房子</p><p>那不得点满技能树</p><h1 id="住处"><a href="#住处" class="headerlink" title="住处"></a>住处</h1><p>有了 床架<br>那就得有 床垫<br>那就得有 床单<br>那就得有 被罩<br>那就得有 被褥<br>那就得有 枕套<br>那就得有 …</p><h1 id="厨房"><a href="#厨房" class="headerlink" title="厨房"></a>厨房</h1><p>有了 食物<br>那就得有 煤气灶&#x2F;电磁炉<br>那就得有 案板<br>那就得有 厨刀&#x2F;刮菜&#x2F;<br>那就得有 炒菜锅&#x2F;汤锅<br>那就得有 铲子&#x2F;漏勺&#x2F;汤勺&#x2F;饭勺<br>那就得有 油&#x2F;盐&#x2F;酱&#x2F;醋&#x2F;辣<br>那就得有 抹布&#x2F;钢丝球&#x2F;垃圾袋<br>那就得有 …</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;啊 租房&lt;/p&gt;
+&lt;p&gt;有了房子&lt;/p&gt;
+&lt;p&gt;那不得点满技能树&lt;/p&gt;
+&lt;h1 id=&quot;住处&quot;&gt;&lt;a href=&quot;#住处&quot; class=&quot;headerlink&quot; title=&quot;住处&quot;&gt;&lt;/a&gt;住处&lt;/h1&gt;&lt;p&gt;有了 床架&lt;br&gt;那就得有 床垫&lt;br&gt;那就得有 床单&lt;br</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>cr660x 路由器研究</title>
@@ -441,31 +464,6 @@
     
     
     <category term="路由器" scheme="https://puzzle9.github.io/categories/%E8%B7%AF%E7%94%B1%E5%99%A8/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>LLM 初探 🕊</title>
-    <link href="https://puzzle9.github.io/posts/44c7d218/"/>
-    <id>https://puzzle9.github.io/posts/44c7d218/</id>
-    <published>2024-09-11T16:59:28.000Z</published>
-    <updated>2025-05-11T06:12:58.228Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>嗯 <code>vgpu</code> 很重要<br>网速、硬盘杀手</p></blockquote><h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><ul><li><code>NVIDIA GeForce GTX 1060 5GB</code></li><li><code>WSL</code> <code>Debian Sid</code></li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">+---------------------------------------------------------------------------------------+</span><br><span class="line">| NVIDIA-SMI 530.41.03              Driver Version: 531.41       CUDA Version: 12.1     |</span><br><span class="line">|-----------------------------------------+----------------------+----------------------+</span><br><span class="line">| GPU  Name                  Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |</span><br><span class="line">| Fan  Temp  Perf            Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |</span><br><span class="line">|                                         |                      |               MIG M. |</span><br><span class="line">|=========================================+======================+======================|</span><br><span class="line">|   0  NVIDIA GeForce GTX 1060 5GB     On | 00000000:08:00.0  On |                  N/A |</span><br><span class="line">|  0%   53C    P8               10W / 120W|    878MiB /  5120MiB |      6%      Default |</span><br><span class="line">|                                         |                      |                  N/A |</span><br><span class="line">+-----------------------------------------+----------------------+----------------------+</span><br><span class="line"></span><br><span class="line">+---------------------------------------------------------------------------------------+</span><br><span class="line">| Processes:                                                                            |</span><br><span class="line">|  GPU   GI   CI        PID   Type   Process name                            GPU Memory |</span><br><span class="line">|        ID   ID                                                             Usage      |</span><br><span class="line">|=======================================================================================|</span><br><span class="line">|  No running processes found                                                           |</span><br><span class="line">+---------------------------------------------------------------------------------------+</span><br></pre></td></tr></table></figure><h1 id="MLC-LLM"><a href="#MLC-LLM" class="headerlink" title="MLC LLM"></a>MLC LLM</h1><ul><li><a href="https://github.com/mlc-ai/mlc-llm">https://github.com/mlc-ai/mlc-llm</a></li></ul><p>这个 他浏览器也能跑的 !!!</p><blockquote><p><a href="https://huggingface.co/mlc-ai/Phi-3.5-mini-instruct-q4f16_1-MLC">Phi-3.5-mini-instruct-q4f16_1-MLC</a></p></blockquote><p>我这个显存试验了一圈 也就这个能跑起来 其余的 就 <code>boom</code></p><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>用的 <code>cuad 12.1</code></p><p>这个需要的扩展包 <code>nvidia-cuda-toolkit</code> <code>debian</code> 在 <code>sid</code> 才提供了</p><h3 id="先更改版本"><a href="#先更改版本" class="headerlink" title="先更改版本"></a>先更改版本</h3><ul><li><a href="https://mirrors.tuna.tsinghua.edu.cn/help/debian/">https://mirrors.tuna.tsinghua.edu.cn/help/debian/</a></li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">rm</span> /etc/apt/sources.list.d/debian.sources</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;deb https://mirrors.tuna.tsinghua.edu.cn/debian/ sid main contrib non-free non-free-firmware&quot;</span> &gt; /etc/apt/sources.list</span><br></pre></td></tr></table></figure><h3 id="安装所需扩展"><a href="#安装所需扩展" class="headerlink" title="安装所需扩展"></a>安装所需扩展</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">apt install nvidia-cuda-toolkit</span><br><span class="line">apt install git git-lfs</span><br><span class="line"></span><br><span class="line">git lfs install</span><br></pre></td></tr></table></figure><h3 id="再安装-conda"><a href="#再安装-conda" class="headerlink" title="再安装 conda"></a>再安装 <code>conda</code></h3><ul><li><a href="https://docs.conda.io/projects/conda/en/latest/user-guide/install/linux.html">https://docs.conda.io/projects/conda/en/latest/user-guide/install/linux.html</a></li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">curl https://repo.anaconda.com/pkgs/misc/gpgkeys/anaconda.asc | gpg --dearmor &gt; conda.gpg</span><br><span class="line">install -o root -g root -m 644 conda.gpg /usr/share/keyrings/conda-archive-keyring.gpg</span><br><span class="line">gpg --keyring /usr/share/keyrings/conda-archive-keyring.gpg --no-default-keyring --fingerprint 34161F5BF5EB1D4BFBBB8F0A8AEB4F8B29D82806</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;deb [arch=amd64 signed-by=/usr/share/keyrings/conda-archive-keyring.gpg] https://repo.anaconda.com/pkgs/misc/debrepo/conda stable main&quot;</span> &gt; /etc/apt/sources.list.d/conda.list</span><br><span class="line"></span><br><span class="line">apt update</span><br><span class="line">apt install conda</span><br></pre></td></tr></table></figure><h2 id="开跑"><a href="#开跑" class="headerlink" title="开跑"></a>开跑</h2><h3 id="下载模型"><a href="#下载模型" class="headerlink" title="下载模型"></a>下载模型</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /llm/mlc-llm</span><br><span class="line"></span><br><span class="line">GIT_LFS_SKIP_SMUDGE=1 git <span class="built_in">clone</span> https://huggingface.co/mlc-ai/Phi-3.5-mini-instruct-q4f16_1-MLC</span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> Phi-3.5-mini-instruct-q4f16_1-MLC</span><br><span class="line">git lfs pull</span><br></pre></td></tr></table></figure><h3 id="配置环境"><a href="#配置环境" class="headerlink" title="配置环境"></a>配置环境</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /llm/</span><br><span class="line">conda create -n ai python=3.12</span><br><span class="line">conda activate ai</span><br><span class="line"></span><br><span class="line"><span class="comment"># https://llm.mlc.ai/docs/install/mlc_llm.html#install-mlc-packages</span></span><br><span class="line"></span><br><span class="line">python -m pip install --pre -U -f https://mlc.ai/wheels mlc-llm-nightly-cu121 mlc-ai-nightly-cu121</span><br><span class="line"></span><br><span class="line"><span class="comment"># 测试</span></span><br><span class="line">python -c <span class="string">&quot;import mlc_llm; print(mlc_llm)&quot;</span></span><br></pre></td></tr></table></figure><h3 id="开跑-1"><a href="#开跑-1" class="headerlink" title="开跑"></a>开跑</h3><blockquote><p>可以体会到 什么叫做给出蹦字</p></blockquote><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /llm/</span><br><span class="line">conda activate ai</span><br><span class="line"></span><br><span class="line">mlc_llm chat Phi-3.5-mini-instruct-q4f16_1-MLC</span><br></pre></td></tr></table></figure><p><img src="/posts/44c7d218/mlc_llm_chat.png"></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;嗯 &lt;code&gt;vgpu&lt;/code&gt; 很重要&lt;br&gt;网速、硬盘杀手&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h1 id=&quot;配置&quot;&gt;&lt;a href=&quot;#配置&quot; class=&quot;headerlink&quot; title=&quot;配置&quot;&gt;&lt;/a&gt;配置&lt;/h1&gt;&lt;ul&gt;</summary>
-      
-    
-    
-    
-    <category term="LLM" scheme="https://puzzle9.github.io/categories/LLM/"/>
     
     
   </entry>
