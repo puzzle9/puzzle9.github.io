@@ -6,7 +6,7 @@
   <link href="https://puzzle9.github.io/atom.xml" rel="self"/>
   
   <link href="https://puzzle9.github.io/"/>
-  <updated>2025-08-14T08:41:54.475Z</updated>
+  <updated>2025-08-23T08:56:10.076Z</updated>
   <id>https://puzzle9.github.io/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>caddy</title>
+    <link href="https://puzzle9.github.io/posts/fcbc6e21/"/>
+    <id>https://puzzle9.github.io/posts/fcbc6e21/</id>
+    <published>2025-08-23T08:40:12.000Z</published>
+    <updated>2025-08-23T08:56:10.076Z</updated>
+    
+    <content type="html"><![CDATA[<p>嗯 不愧是现有的替代品</p><p>这个出现源于浏览器的默认 <code>https</code> 模式访问</p><p>浏览器是 <code>chrome</code> 的<br>这个是 <code>go</code> 写的<br>嗯 这都很 <code>google</code></p><h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><h2 id="alpine"><a href="#alpine" class="headerlink" title="alpine"></a>alpine</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apk add caddy caddy-openrc</span><br></pre></td></tr></table></figure><h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><p>默认配置文件位置 <code>/etc/caddy/Caddyfile</code></p><p>可以这么引入更多文件</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import /data/conf/*.caddy</span><br></pre></td></tr></table></figure><h1 id="示例配置"><a href="#示例配置" class="headerlink" title="示例配置"></a>示例配置</h1><p><code>/data/conf/example.caddy</code></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">[domain] &#123;</span><br><span class="line">        encode zstd gzip</span><br><span class="line"></span><br><span class="line">        #tls email@domain</span><br><span class="line"></span><br><span class="line">        header -X-Powered-By</span><br><span class="line">        header -Server</span><br><span class="line"></span><br><span class="line">        log &#123;</span><br><span class="line">                output file /var/log/caddy_domain.log</span><br><span class="line"></span><br><span class="line">                format console &#123;</span><br><span class="line">                        time_format wall</span><br><span class="line">                        time_local</span><br><span class="line">                &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        root * /data/html</span><br><span class="line">        file_server</span><br><span class="line"></span><br><span class="line">        respond / 418</span><br><span class="line"></span><br><span class="line">        #reverse_proxy 127.0.0.1:9000</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>可以使用 <code>caddy fmt Caddyfile --overwrite</code> 格式化缩进等并保存文件</p><h1 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h1><p>使用插件时会自动从 <a href="https://caddyserver.com/download">https://caddyserver.com/download</a> 下载编译后的版本替换本地文件<br>如果使用源安装会出现被替换情况<br>建议直接<code>二进制</code>安装</p><h2 id="dns-tencentcloud"><a href="#dns-tencentcloud" class="headerlink" title="dns_tencentcloud"></a><a href="https://github.com/caddy-dns/tencentcloud">dns_tencentcloud</a></h2><p><code>dns</code> 类的解决 非标准端口的证书服务</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">caddy add-package github.com/caddy-dns/tencentcloud</span><br></pre></td></tr></table></figure><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">https://[domain]:[port] &#123;</span><br><span class="line">        tls &#123;</span><br><span class="line">                dns tencentcloud &#123;</span><br><span class="line">                        secret_id &#x27;SecretId&#x27;</span><br><span class="line">                        secret_key &#x27;SecretKey&#x27;</span><br><span class="line">                &#125;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="webdav"><a href="#webdav" class="headerlink" title="webdav"></a><a href="https://github.com/mholt/caddy-webdav">webdav</a></h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">caddy add-package github.com/mholt/caddy-webdav</span><br></pre></td></tr></table></figure><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">        order webdav before file_server</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">[domain] &#123;</span><br><span class="line">        encode zstd gzip</span><br><span class="line"></span><br><span class="line">        redir /webdav /webdav/</span><br><span class="line">        handle /webdav/* &#123;</span><br><span class="line">                basic_auth &#123;</span><br><span class="line">                        # 用户名为 user 密码为 123 使用 caddy hash-password 生成</span><br><span class="line">                        user $2a$14$Yf5JnX4iYPX4Jrmki5h.hO.1J2JDrBPIVbK2oqIj5geG6RNG.bMc6</span><br><span class="line">                &#125;</span><br><span class="line">                webdav &#123;</span><br><span class="line">                        root /data</span><br><span class="line">                        prefix /webdav</span><br><span class="line">                &#125;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h1 id="参考地址"><a href="#参考地址" class="headerlink" title="参考地址"></a>参考地址</h1><ul><li><a href="https://young-lord.github.io/posts/caddy-webdav">https://young-lord.github.io/posts/caddy-webdav</a></li><li><a href="https://caddy.community/t/caddy-service-wont-stay-running-or-start-with-boot-alpine-openrc">https://caddy.community/t/caddy-service-wont-stay-running-or-start-with-boot-alpine-openrc</a></li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;嗯 不愧是现有的替代品&lt;/p&gt;
+&lt;p&gt;这个出现源于浏览器的默认 &lt;code&gt;https&lt;/code&gt; 模式访问&lt;/p&gt;
+&lt;p&gt;浏览器是 &lt;code&gt;chrome&lt;/code&gt; 的&lt;br&gt;这个是 &lt;code&gt;go&lt;/code&gt; 写的&lt;br&gt;嗯 这都很 &lt;code&gt;google</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>webhookd 发布</title>
@@ -428,28 +450,6 @@
     
     
     <category term="linux" scheme="https://puzzle9.github.io/tags/linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>vite 的 target 呀</title>
-    <link href="https://puzzle9.github.io/posts/97f3c987/"/>
-    <id>https://puzzle9.github.io/posts/97f3c987/</id>
-    <published>2024-11-19T13:41:38.000Z</published>
-    <updated>2025-05-11T06:12:58.235Z</updated>
-    
-    <content type="html"><![CDATA[<p>恩 浏览器兼容 换赛道了呢</p><p>好久没升级的我遇到了 <code>Object.hasOwn is not a function</code> 错误</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Mozilla/5.0 (Linux; Android 12; 2112123AG Build/SKQ1.220303.001; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/86.0.4240.99 XWEB/4263 MMWEBSDK/20220604 Mobile Safari/537.36 MMWEBID/2083 MicroMessenger/8.0.24.2167(0x28001843) WeChat/arm64 Weixin GPVersion/1 NetType/WIFI Language/zh_CN ABI/arm64  </span><br></pre></td></tr></table></figure><p>看了看应用的包 发现 <code>ky</code> 这个现代的有趣家伙</p><p>恩 搜了搜 发现优雅的解决方案</p><p><code>main.ts</code></p><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> * <span class="keyword">as</span> hasOwn <span class="keyword">from</span> <span class="string">&#x27;object.hasown&#x27;</span></span><br><span class="line"><span class="keyword">if</span> (!<span class="variable language_">window</span>.<span class="property">Object</span>.<span class="property">hasOwn</span>) &#123;</span><br><span class="line">  hasOwn.<span class="title function_">shim</span>()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>参考地址</p><ul><li><a href="https://github.com/sindresorhus/ky/issues/629">https://github.com/sindresorhus/ky/issues/629</a></li><li><a href="https://github.com/vitejs/vite/discussions/15794">https://github.com/vitejs/vite/discussions/15794</a></li><li><a href="https://ccny.ltd/views/blog/2022/%E4%BB%8E%20Object.hasOwn%20%E7%9C%8B%20@vitejs_plugin-legacy.html">https://ccny.ltd/views/blog/2022/%E4%BB%8E%20Object.hasOwn%20%E7%9C%8B%20@vitejs_plugin-legacy.html</a></li></ul>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;恩 浏览器兼容 换赛道了呢&lt;/p&gt;
-&lt;p&gt;好久没升级的我遇到了 &lt;code&gt;Object.hasOwn is not a function&lt;/code&gt; 错误&lt;/p&gt;
-&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td cl</summary>
-      
-    
-    
-    
     
   </entry>
   
